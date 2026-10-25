@@ -148,6 +148,10 @@ class CompatibleModel:
                     # the prompts already ask for JSON, so stop sending it.
                     self.json_mode = False
                     body.pop("response_format", None)
+                elif '"failed_generation":""' in text:
+                    # JSON mode got an empty reply: same cause as above, the model
+                    # ran out of room while reasoning.
+                    body["reasoning_effort"] = "low"
                 elif "json_validate_failed" in text or isinstance(e, ValueError):
                     # JSON mode rejected the model's own output, or the reply was not
                     # valid JSON: ask once more, then once without JSON mode.
