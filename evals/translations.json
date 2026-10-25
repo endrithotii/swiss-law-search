@@ -103,5 +103,12 @@
   "fr": "Mon employeur peut-il me faire travailler le dimanche?",
   "it": "Il mio datore di lavoro può farmi lavorare la domenica?",
   "en": "Is my employer allowed to make me work on Sundays?"
+ },
+ "groq/openai/gpt-oss-20b:8f60f78632842f91": {
+  "q": "When is night work allowed?",
+  "de": "Wann ist Nachtarbeit zulässig?",
+  "fr": "Quand le travail de nuit est-il autorisé?",
+  "it": "Quando è consentito il lavoro notturno?",
+  "en": "When is night work allowed?"
  }
 }
