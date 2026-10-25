@@ -1,0 +1,390 @@
+"""The static site: search Swiss federal law in any official language and read
+each article side by side in German, French, Italian and English.
+
+Everything runs in the browser. The page tokenises and ranks exactly like
+search.py (the stop words and suffixes are written into the page from text.py),
+so a query gives the same ranking on the site as on the command line.
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from .text import MIN_STEM, STOP, SUFFIXES
+
+
+def _payload(corpus: dict) -> dict:
+    acts = [{"eli": a["eli"], "sr": a["sr"], "short": a["short"], "title": a["title"],
+             "version": a["version"], "source": a["source"], "authoritative": a["authoritative"]}
+            for a in corpus["acts"]]
+    arts = []
+    for a in corpus["articles"]:
+        arts.append({"id": a["id"], "act": a["act"],
+                     "l": {l: [e["num"], e["heading"], e["path"][-2:], e["text"]] for l, e in a["lang"].items()}})
+    return {"built": corpus["built"], "acts": acts, "articles": arts}
+
+
+def write(corpus: dict, out: Path, results: Path = Path("evals/results.json"),
+          answers: Path = Path("evals/answers.json")) -> None:
+    (out / "data").mkdir(parents=True, exist_ok=True)
+    (out / "data" / "corpus.json").write_text(json.dumps(_payload(corpus), ensure_ascii=False, separators=(",", ":")),
+                                               encoding="utf-8")
+    extra = {}
+    if results.exists():
+        r = json.loads(results.read_text(encoding="utf-8"))
+        extra["eval"] = {"summary": r["summary"], "translator": r.get("translator"),
+                         "rows": [{k: x[k] for k in ("id", "q", "gold", "rank", "translation")} for x in r["rows"]]}
+    if answers.exists():
+        extra["answers"] = json.loads(answers.read_text(encoding="utf-8"))
+    (out / "data" / "results.json").write_text(json.dumps(extra, ensure_ascii=False), encoding="utf-8")
+    text = {"stop": {l: sorted(v) for l, v in STOP.items()}, "suffixes": SUFFIXES, "minStem": MIN_STEM}
+    (out / "index.html").write_text(PAGE.replace("/*TEXT*/", json.dumps(text, ensure_ascii=False)), encoding="utf-8")
+    print(out / "index.html")
+
+
+PAGE = r"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swiss law search</title>
+<meta name="description" content="Search Swiss federal law in German, French, Italian or English and read every article side by side in all four.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root {
+  --ground: #EEF1F0; --paper: #FFFFFF; --ink: #172026; --muted: #55636C; --rule: #D2D9D8;
+  --petrol: #0E5E6F; --petrol-soft: #DCEBEC; --ochre: #8A5F00; --ochre-soft: #F6ECD3;
+  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Spectral", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--ground); color: var(--ink); }
+body { margin: 0; font: 16px/1.5 var(--sans); }
+a { color: var(--petrol); }
+:focus-visible { outline: 2px solid var(--petrol); outline-offset: 2px; }
+.wrap { max-width: 80rem; margin: 0 auto; padding-inline: 1.25rem; }
+
+/* Search: the first thing on the page */
+.top { padding-block: 2.6rem 1.4rem; }
+.top h1 { font: 600 clamp(1.6rem, 3.2vw, 2.3rem)/1.15 var(--sans); letter-spacing: -0.015em; margin: 0; max-width: 30ch; }
+.top p { color: var(--muted); max-width: 64ch; margin: 0.6rem 0 0; }
+form.search { display: grid; grid-template-columns: 1fr auto; gap: 0; margin-top: 1.4rem; max-width: 52rem;
+  background: var(--paper); border: 1.5px solid var(--ink); border-radius: 6px; }
+form.search input { font: 400 1.15rem/1.3 var(--serif); border: 0; padding: 0.85rem 1rem; background: transparent; color: var(--ink); min-width: 0; }
+form.search input:focus { outline: none; }
+form.search:focus-within { box-shadow: 0 0 0 3px var(--petrol-soft); }
+.langs { display: flex; align-items: center; gap: 2px; padding: 0.35rem; }
+.langs button { font: 600 0.85rem var(--sans); border: 0; background: transparent; color: var(--muted); padding: 0.45rem 0.6rem; border-radius: 4px; cursor: pointer; }
+.langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.under { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; margin-top: 0.8rem; color: var(--muted); font-size: 0.9rem; }
+.under button.eg { font: italic 400 0.95rem var(--serif); color: var(--petrol); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.acts { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.9rem; }
+.acts label { font-size: 0.85rem; border: 1px solid var(--rule); background: var(--paper); border-radius: 4px; padding: 0.2rem 0.55rem; cursor: pointer; user-select: none; }
+.acts input { margin: 0 0.3rem 0 0; accent-color: var(--petrol); }
+
+/* Results and the reading pane */
+.work { display: grid; grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr); gap: 1.4rem; align-items: start; padding-bottom: 3rem; }
+.results { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
+.results li button { display: block; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--rule); padding: 0.7rem 0.4rem 0.75rem; cursor: pointer; color: var(--ink); font: inherit; }
+.results li button:hover { background: var(--paper); }
+.results li button[aria-current="true"] { background: var(--paper); box-shadow: inset 3px 0 0 var(--petrol); }
+.results .ref { font-weight: 600; font-size: 0.95rem; }
+.results .ref small { font-weight: 400; color: var(--muted); margin-left: 0.35rem; }
+.results .what { display: block; font: 400 1rem/1.35 var(--serif); margin-top: 0.15rem; }
+.empty { color: var(--muted); padding: 1rem 0.4rem; }
+
+.reader { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; min-height: 20rem; }
+.reader header { padding: 1.1rem 1.3rem 0.9rem; border-bottom: 1px solid var(--rule); }
+.reader h2 { font: 600 1.35rem/1.2 var(--sans); margin: 0; }
+.reader .act { color: var(--muted); margin: 0.25rem 0 0; font-size: 0.92rem; }
+.tabs { display: none; gap: 2px; padding: 0.6rem 1rem 0; }
+.parallel { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); }
+.col { padding: 1rem 1.2rem 1.4rem; border-left: 1px solid var(--rule); min-width: 0; }
+.col:first-child { border-left: 0; }
+.col .lang { display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.6rem; }
+.col .lang b { color: var(--ink); font-weight: 600; font-size: 0.9rem; }
+.badge { font-size: 0.78rem; border-radius: 3px; padding: 0.05rem 0.4rem; white-space: nowrap; }
+.badge.binding { background: var(--petrol-soft); color: var(--petrol); }
+.badge.translation { background: var(--ground); color: var(--muted); }
+.badge.older { background: var(--ochre-soft); color: var(--ochre); }
+.col h3 { font: 600 1.05rem/1.3 var(--serif); margin: 0 0 0.6rem; }
+.col .trail { font-size: 0.8rem; color: var(--muted); margin: 0 0 0.7rem; }
+.col p { font: 400 1rem/1.62 var(--serif); margin: 0 0 0.65rem; hyphens: auto; }
+.col p .n { font: 600 0.78rem var(--sans); color: var(--petrol); vertical-align: 0.35em; margin-right: 0.25rem; }
+.col.missing { color: var(--muted); font-size: 0.92rem; }
+.col mark { background: #FFF1A8; color: inherit; padding: 0 1px; }
+.reader footer { padding: 0.8rem 1.3rem 1rem; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--muted); }
+
+/* How well it works */
+.eval { background: var(--paper); border-top: 1px solid var(--rule); padding-block: 2.4rem 3rem; }
+.eval h2 { font: 600 1.4rem var(--sans); margin: 0 0 0.4rem; }
+.eval .lede { max-width: 68ch; color: var(--muted); margin: 0 0 1.4rem; }
+.modes { display: grid; gap: 0.55rem; max-width: 52rem; }
+.mode { display: grid; grid-template-columns: 17rem 1fr 4.2rem; gap: 0.9rem; align-items: center; }
+.mode .bar { height: 14px; background: var(--ground); border-radius: 2px; position: relative; overflow: hidden; }
+.mode .bar span { position: absolute; inset: 0 auto 0 0; background: var(--petrol); }
+.mode .bar span.k1 { background: var(--ink); }
+.mode .v { font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.key { font-size: 0.85rem; color: var(--muted); margin-top: 0.7rem; display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.key i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -1px; margin-right: 0.35rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.4rem; margin-top: 2rem; max-width: 64rem; }
+.facts p { margin: 0; max-width: 46ch; }
+.facts b { display: block; font: 600 1.6rem var(--sans); }
+details.qs { margin-top: 2rem; max-width: 64rem; }
+details.qs summary { cursor: pointer; font-weight: 600; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; margin-top: 0.8rem; }
+th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; }
+td.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.miss { color: var(--ochre); }
+.answers { margin-top: 2.2rem; max-width: 60rem; }
+.answer { border-left: 3px solid var(--petrol); padding: 0.2rem 0 0.2rem 1rem; margin: 1.2rem 0; }
+.answer h3 { font: 500 1.05rem/1.35 var(--serif); font-style: italic; margin: 0 0 0.5rem; }
+.answer li { margin: 0.35rem 0; }
+.answer .cite { font-size: 0.85rem; color: var(--muted); }
+.answer .disputed { color: var(--ochre); }
+.page-foot { padding-block: 1.6rem 2.6rem; color: var(--muted); font-size: 0.85rem; }
+.page-foot p { max-width: 80ch; margin: 0.3rem 0; }
+
+@media (max-width: 960px) {
+  .work { grid-template-columns: 1fr; }
+  .results { max-height: 21rem; overflow-y: auto; }
+  .tabs { display: flex; }
+  .parallel { grid-template-columns: 1fr; }
+  .col { border-left: 0; display: none; }
+  .col.on { display: block; }
+  .mode { grid-template-columns: 1fr 3.6rem; }
+  .mode .bar { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (max-width: 520px) {
+  form.search { grid-template-columns: 1fr; }
+  .langs { border-top: 1px solid var(--rule); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mode .bar span { transition: width 600ms ease-out; }
+}
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <h1>Find the article of Swiss federal law that answers your question.</h1>
+  <p>Search in German, French, Italian or English. Every article opens in all four languages side by side, with the date of each version, because only the German, French and Italian texts are legally binding.</p>
+  <form class="search" role="search" id="form">
+    <input id="q" type="search" autocomplete="off" spellcheck="false" aria-label="Search the law" placeholder="Kündigungsfrist Probezeit">
+    <div class="langs" role="group" aria-label="Language of your search">
+      <button type="button" data-l="de" aria-pressed="true">DE</button>
+      <button type="button" data-l="fr" aria-pressed="false">FR</button>
+      <button type="button" data-l="it" aria-pressed="false">IT</button>
+      <button type="button" data-l="en" aria-pressed="false">EN</button>
+    </div>
+  </form>
+  <div class="under" id="examples">Try
+    <button class="eg" data-l="de" data-q="Kündigung während Krankheit">Kündigung während Krankheit</button>
+    <button class="eg" data-l="fr" data-q="violation de la sécurité des données annonce">violation de la sécurité des données</button>
+    <button class="eg" data-l="en" data-q="holiday entitlement weeks">holiday entitlement</button>
+    <button class="eg" data-l="it" data-q="lavoro domenicale">lavoro domenicale</button>
+  </div>
+  <div class="acts" id="acts" aria-label="Acts to search"></div>
+</header>
+
+<main class="wrap work">
+  <section aria-label="Results"><ol class="results" id="results"><li class="empty">Loading the law…</li></ol></section>
+  <article class="reader" id="reader" aria-live="polite"></article>
+</main>
+
+<section class="eval" id="eval" hidden>
+  <div class="wrap">
+    <h2>Does searching in four languages find more?</h2>
+    <p class="lede" id="eval-lede"></p>
+    <div class="modes" id="modes"></div>
+    <div class="key"><span><i style="background:var(--ink)"></i>right article first</span><span><i style="background:var(--petrol)"></i>right article in the top five</span></div>
+    <div class="facts" id="facts"></div>
+    <details class="qs"><summary>All questions and where the right article ranked</summary><div style="overflow-x:auto"><table id="qtable"></table></div></details>
+    <div class="answers" id="answers"></div>
+  </div>
+</section>
+
+<footer class="wrap page-foot">
+  <p>Texts from Fedlex, the official publication platform of the Swiss Confederation, read from its public data service. This site is a search tool, not legal advice; always check the current text on fedlex.admin.ch.</p>
+  <p id="built"></p>
+</footer>
+
+<script>
+const TEXT = /*TEXT*/;
+const NAMES = {de: "Deutsch", fr: "Français", it: "Italiano", en: "English"};
+const ORDER = ["de", "fr", "it", "en"];
+
+// ---- text: the same steps as swisslaw/text.py ----
+const fold = s => s.toLowerCase().replace(/ß/g, "ss").normalize("NFD").replace(/\p{Mn}/gu, "");
+const STOPF = Object.fromEntries(Object.entries(TEXT.stop).map(([l, ws]) => [l, new Set(ws.map(fold))]));
+const WORD = /[^\P{L}]+|\d+[a-z]*/gu;
+function stem(w, l) {
+  for (const s of TEXT.suffixes[l] || []) if (w.endsWith(s) && w.length - s.length >= TEXT.minStem) return w.slice(0, -s.length);
+  return w;
+}
+function tokens(text, l) {
+  const out = [], stop = STOPF[l] || new Set();
+  for (const w of fold(text).match(WORD) || []) { if (stop.has(w) || w.length < 2) continue; out.push(stem(w, l)); }
+  return out;
+}
+
+// ---- BM25, as swisslaw/search.py ----
+const K1 = 1.2, B = 0.75, indexes = {};
+function buildIndex(l) {
+  const ids = [], tf = [], dl = [], df = new Map(), post = new Map();
+  for (const a of DATA.articles) {
+    const e = a.l[l]; if (!e) continue;
+    const doc = [e[1], e[1], e[2].slice(-2).join(" "), e[3]].join(" ");
+    const t = new Map(); let n = 0;
+    for (const w of tokens(doc, l)) { t.set(w, (t.get(w) || 0) + 1); n++; }
+    const i = ids.length; ids.push(a.id); tf.push(t); dl.push(n);
+    for (const w of t.keys()) { df.set(w, (df.get(w) || 0) + 1); if (!post.has(w)) post.set(w, []); post.get(w).push(i); }
+  }
+  const N = ids.length, avg = dl.reduce((x, y) => x + y, 0) / N, idf = new Map();
+  for (const [w, d] of df) idf.set(w, Math.log(1 + (N - d + 0.5) / (d + 0.5)));
+  return {ids, tf, dl, avg, idf, post};
+}
+function search(q, l, k = 25) {
+  const ix = indexes[l] || (indexes[l] = buildIndex(l)), score = new Map();
+  for (const w of new Set(tokens(q, l))) {
+    const idf = ix.idf.get(w); if (idf === undefined) continue;
+    for (const i of ix.post.get(w)) {
+      const f = ix.tf[i].get(w);
+      score.set(i, (score.get(i) || 0) + idf * f * (K1 + 1) / (f + K1 * (1 - B + B * ix.dl[i] / ix.avg)));
+    }
+  }
+  return [...score].sort((a, b) => b[1] - a[1] || (ix.ids[a[0]] < ix.ids[b[0]] ? -1 : 1)).map(([i]) => ix.ids[i])
+    .filter(id => activeActs.has(BY[id].act)).slice(0, k);
+}
+
+// ---- page ----
+let DATA, BY, ACTS, lang = "de", current = null, activeActs = new Set(), terms = [];
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+function ref(a, l) {
+  const act = ACTS[a.act], e = a.l[l] || a.l[act.authoritative];
+  return `${e[0]} ${act.short[l] || act.short.de}`;
+}
+function highlight(html, l) {
+  if (!terms.length) return html;
+  return html.replace(/[\p{L}\d]+/gu, w => terms.includes(stem(fold(w), l)) && !STOPF[l]?.has(fold(w)) ? `<mark>${w}</mark>` : w);
+}
+
+function renderResults(ids) {
+  const ol = $("#results");
+  if (!ids.length) { ol.innerHTML = `<li class="empty">No article matches. Try other words, or search in another language.</li>`; return; }
+  ol.innerHTML = ids.map(id => {
+    const a = BY[id], act = ACTS[a.act], e = a.l[lang] || a.l[act.authoritative];
+    return `<li><button type="button" data-id="${esc(id)}" aria-current="${id === current}"><span class="ref">${esc(e[0])}<small>${esc(act.short[lang] || act.short.de)}, SR ${esc(act.sr)}</small></span><span class="what">${esc(e[1])}</span></button></li>`;
+  }).join("");
+}
+
+function renderArticle(id) {
+  const a = BY[id]; if (!a) return;
+  current = id;
+  document.querySelectorAll(".results button").forEach(b => b.setAttribute("aria-current", b.dataset.id === id));
+  const act = ACTS[a.act], newest = Math.max(...["de", "fr", "it"].filter(l => act.version[l]).map(l => +new Date(act.version[l])));
+  const cols = ORDER.map(l => {
+    const e = a.l[l];
+    if (!e) {
+      const why = act.version[l] ? "This article is not in the English version Fedlex publishes, which is older than the binding text." :
+        "Fedlex publishes no English translation of this act.";
+      return `<div class="col missing" data-l="${l}"><div class="lang"><b>${NAMES[l]}</b></div><p>${why}</p></div>`;
+    }
+    const v = act.version[l], older = +new Date(v) < newest;
+    const badge = l === "en" ? `<span class="badge ${older ? "older" : "translation"}">${older ? "translation of an older version" : "translation, not binding"}</span>`
+                             : `<span class="badge binding">binding</span>`;
+    const paras = e[3].split("\n").map(p => {
+      const m = p.match(/^(\d+[a-z]*)\s+([\s\S]*)$/);
+      return m ? `<p><span class="n">${esc(m[1])}</span>${highlight(esc(m[2]), l)}</p>` : `<p>${highlight(esc(p), l)}</p>`;
+    }).join("");
+    return `<div class="col" data-l="${l}"><div class="lang"><b>${NAMES[l]}</b><span>in force from ${esc(v)}</span></div>
+      <h3>${esc(e[0])} ${esc(e[1])}</h3>${e[2].length ? `<p class="trail">${esc(e[2].join(", "))}</p>` : ""}${badge ? `<div style="margin:-0.3rem 0 0.7rem">${badge}</div>` : ""}${paras}</div>`;
+  }).join("");
+  const title = act.title[lang] || act.title.de;
+  $("#reader").innerHTML = `<header><h2>${esc(ref(a, lang))}</h2><p class="act">${esc(title)}, SR ${esc(act.sr)}</p></header>
+    <div class="tabs" role="tablist">${ORDER.map(l => `<button type="button" role="tab" data-tab="${l}" aria-selected="${l === lang}" class="langtab">${l.toUpperCase()}</button>`).join("")}</div>
+    <div class="parallel">${cols}</div>
+    <footer>Source: <a href="${esc(ELI(act))}" rel="noopener">${esc(title)} on Fedlex</a>. Article ${esc(a.id.split(" ")[1].replace("art_", "").replace(/_/g, ""))} carries the same identifier in every language, which is how the columns are matched.</footer>`;
+  setTab(lang);
+  history.replaceState(null, "", "#" + encodeURIComponent(id));
+}
+const ELI = act => "https://www.fedlex.admin.ch/eli/" + act.eli + "/" + (lang === "en" && act.version.en ? "en" : lang === "en" ? "de" : lang);
+function setTab(l) {
+  document.querySelectorAll(".col").forEach(c => c.classList.toggle("on", c.dataset.l === l));
+  document.querySelectorAll(".langtab").forEach(b => { b.setAttribute("aria-selected", b.dataset.tab === l); b.style.cssText = b.dataset.tab === l ? "background:var(--ink);color:var(--paper)" : ""; });
+}
+
+function run() {
+  const q = $("#q").value.trim();
+  terms = tokens(q, lang);
+  if (!q) { renderResults([]); $("#results").innerHTML = `<li class="empty">Type a question or a few words.</li>`; return; }
+  const ids = search(q, lang);
+  renderResults(ids);
+  if (ids.length && (!current || !ids.includes(current))) renderArticle(ids[0]);
+  else if (current) renderArticle(current);
+}
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === l));
+  $("#q").placeholder = {de: "Kündigungsfrist Probezeit", fr: "délai de congé temps d'essai", it: "termine di disdetta periodo di prova", en: "notice period probation"}[l];
+  run();
+}
+
+function renderEval(R) {
+  const E = R.eval; if (!E) return;
+  const S = E.summary, n = E.rows.length;
+  $("#eval").hidden = false;
+  $("#eval-lede").textContent = `${n} questions in plain English, the way people type them, each checked against the article that answers it. The same question is searched four ways: in the English translation only, and after a model (${(E.translator || "").split(":").pop()}) rewrites it in the legal language of German, French and Italian.`;
+  const order = ["en", "de", "official", "all"];
+  $("#modes").innerHTML = order.map(m => `<div class="mode"><span>${esc(S[m].label)}</span>
+    <span class="bar" title="first: ${Math.round(100 * S[m]["hit@1"])}%, top five: ${Math.round(100 * S[m]["hit@5"])}%"><span style="width:${100 * S[m]["hit@5"]}%"></span><span class="k1" style="width:${100 * S[m]["hit@1"]}%"></span></span>
+    <span class="v">${Math.round(100 * S[m]["hit@5"])}%</span></div>`).join("");
+  const ne = S.no_english, c = S["all_vs_en@5"];
+  $("#facts").innerHTML = `
+    <p><b>${ne.found_en}/${ne.questions} and ${ne.found_all}/${ne.questions}</b>Questions answered only by acts with no English text at all (the Labour Act, the Product Liability Act): found in the top five by English search, and by the four-language search.</p>
+    <p><b>${c.only_all} against ${c.only_en}</b>Questions only the four-language search found in its top five, against questions only English search found. Exact McNemar test: p = ${c.p < 0.001 ? "< 0.001" : c.p.toFixed(3)}.</p>
+    <p><b>${Math.round(100 * S.all.mrr) / 100} against ${Math.round(100 * S.en.mrr) / 100}</b>Mean reciprocal rank of the right article, four languages against English only. 1 would mean always first.</p>`;
+  const cell = r => r ? `<td class="r">${r}</td>` : `<td class="r miss">not in top 10</td>`;
+  $("#qtable").innerHTML = `<thead><tr><th>Question</th><th>Right article</th><th>English only</th><th>Four languages</th></tr></thead><tbody>` +
+    E.rows.map(r => `<tr><td>${esc(r.q)}</td><td>${r.gold.map(g => `<a href="#${encodeURIComponent(g)}" data-open="${esc(g)}">${esc(BY[g] ? ref(BY[g], "en") : g)}</a>`).join(", ")}</td>${cell(r.rank.en)}${cell(r.rank.all)}</tr>`).join("") + `</tbody>`;
+  if (R.answers && R.answers.items?.length) {
+    const A = R.answers;
+    $("#answers").innerHTML = `<h2>Answers, with every citation checked</h2>
+      <p class="lede">${esc(A.note)}</p>` + A.items.map(x => `<div class="answer"><h3>${esc(x.question)}</h3><ul>${
+        x.points.map(p => `<li${p.check && p.check.verdict !== "supported" ? ' class="disputed"' : ""}>${esc(p.text)} <span class="cite">${p.cites.map(c => `<a href="#${encodeURIComponent(c.article)}" data-open="${esc(c.article)}">${esc(BY[c.article] ? ref(BY[c.article], "en") : c.article)}${c.para ? " para. " + esc(c.para) : ""}</a>`).join(", ")}${p.check ? `, second model: ${esc(p.check.verdict.replace("_", " "))}` : ""}</span></li>`).join("")
+      }</ul>${x.dropped?.length ? `<p class="cite">${x.dropped.length} point${x.dropped.length > 1 ? "s" : ""} removed because the quote was not in the cited paragraph.</p>` : ""}</div>`).join("");
+  }
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-id]"); if (b) { renderArticle(b.dataset.id); if (innerWidth < 960) $("#reader").scrollIntoView({behavior: "smooth"}); return; }
+  const l = e.target.closest(".langs button"); if (l) { setLang(l.dataset.l); return; }
+  const t = e.target.closest("[data-tab]"); if (t) { setTab(t.dataset.tab); return; }
+  const eg = e.target.closest(".eg"); if (eg) { $("#q").value = eg.dataset.q; current = null; setLang(eg.dataset.l); return; }
+  const o = e.target.closest("[data-open]"); if (o) { e.preventDefault(); renderArticle(o.dataset.open); $("#reader").scrollIntoView({behavior: "smooth"}); }
+});
+$("#form").addEventListener("submit", e => { e.preventDefault(); current = null; run(); });
+let timer; $("#q").addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => { current = null; run(); }, 180); });
+
+Promise.all([fetch("data/corpus.json").then(r => r.json()), fetch("data/results.json").then(r => r.ok ? r.json() : {}).catch(() => ({}))])
+  .then(([d, R]) => {
+    DATA = d; BY = Object.fromEntries(d.articles.map(a => [a.id, a])); ACTS = Object.fromEntries(d.acts.map(a => [a.eli, a]));
+    activeActs = new Set(d.acts.map(a => a.eli));
+    $("#acts").innerHTML = d.acts.map(a => `<label title="${esc(a.title.en || a.title.de)}"><input type="checkbox" checked value="${esc(a.eli)}">${esc(a.short.de)}<span style="color:var(--muted)"> / ${esc(a.short.fr)}</span></label>`).join("");
+    $("#acts").addEventListener("change", e => { e.target.checked ? activeActs.add(e.target.value) : activeActs.delete(e.target.value); run(); });
+    $("#built").textContent = `${d.articles.length} articles from ${d.acts.length} acts, read from Fedlex on ${d.built}.`;
+    renderEval(R);
+    const h = decodeURIComponent(location.hash.slice(1));
+    $("#q").value = "Kündigung während Krankheit"; run();
+    if (BY[h]) renderArticle(h);
+  })
+  .catch(() => { $("#results").innerHTML = `<li class="empty">The law texts did not load. Reload the page.</li>`; });
+</script>
+</body>
+</html>
+"""

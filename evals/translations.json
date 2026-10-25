@@ -1,0 +1,86 @@
+{
+ "groq/openai/gpt-oss-20b:8a7865e68749ba49": {
+  "q": "How much notice do I have to give if I quit during my trial period?",
+  "de": "Wie lange ist die Kündigungsfrist bei einer Kündigung während der Probezeit?",
+  "fr": "Quelle est la durée du délai de préavis en cas de démission pendant la période d'essai?",
+  "it": "Qual è la durata del termine di preavviso in caso di dimissioni durante il periodo di prova?",
+  "en": "How much notice do I have to give if I quit during my trial period?"
+ },
+ "groq/openai/gpt-oss-20b:7c42e1b9963a11fe": {
+  "q": "I have worked at my company for three years. How long is my notice period?",
+  "de": "Ich arbeite seit drei Jahren bei meinem Unternehmen. Wie lange ist meine Kündigungsfrist?",
+  "fr": "Je travaille dans mon entreprise depuis trois ans. Quelle est la durée de mon délai de préavis?",
+  "it": "Lavoro nella mia azienda da tre anni. Qual è la durata del mio termine di preavviso?",
+  "en": "I have worked at my company for three years. How long is my notice period?"
+ },
+ "groq/openai/gpt-oss-20b:4300c4f07f63ac53": {
+  "q": "Can my boss fire me while I am off sick?",
+  "de": "Kann mein Arbeitgeber mich kündigen, während ich krankheitsbedingt abwesend bin?",
+  "fr": "Mon employeur peut-il me licencier alors que je suis absent pour maladie?",
+  "it": "Il mio datore di lavoro può licenziarmi mentre sono assente per malattia?",
+  "en": "Can my boss fire me while I am off sick?"
+ },
+ "groq/openai/gpt-oss-20b:6df1d8982cca66dd": {
+  "q": "How many weeks of paid vacation am I entitled to each year?",
+  "de": "Wie viele Wochen bezahlten Urlaub habe ich pro Jahr Anspruch?",
+  "fr": "Combien de semaines de congés payés me sont accordées chaque année?",
+  "it": "Quante settimane di ferie retribuite mi spettano ogni anno?",
+  "en": "How many weeks of paid vacation am I entitled to each year?"
+ },
+ "groq/openai/gpt-oss-20b:a56fb7a2d0f64f4a": {
+  "q": "Does my employer have to keep paying my salary when I am ill and cannot work?",
+  "de": "Muss mein Arbeitgeber meinen Lohn fortzahlen, wenn ich krank bin und nicht arbeiten kann?",
+  "fr": "Mon employeur doit-il continuer à verser mon salaire lorsque je suis malade et incapable de travailler?",
+  "it": "Il mio datore di lavoro deve continuare a versare il mio salario quando sono malato e non posso lavorare?",
+  "en": "Does my employer have to keep paying my salary when I am ill and cannot work?"
+ },
+ "groq/openai/gpt-oss-20b:94c71fd36fb287c7": {
+  "q": "Is the non-compete clause in my contract enforceable after I leave the job?",
+  "de": "Ist die Wettbewerbsverbotsklausel in meinem Vertrag nach meinem Ausscheiden aus dem Unternehmen durchsetzbar?",
+  "fr": "La clause de non-concurrence de mon contrat est-elle exécutoire après mon départ de l'entreprise?",
+  "it": "La clausola di non concorrenza del mio contratto è eseguibile dopo la mia uscita dall'azienda?",
+  "en": "Is the non-compete clause in my contract enforceable after I leave the job?"
+ },
+ "groq/openai/gpt-oss-20b:121874240cc533f5": {
+  "q": "Can I be dismissed on the spot without any notice?",
+  "de": "Kann ich ohne Kündigungsfrist sofort entlassen werden?",
+  "fr": "Puis-je être licencié immédiatement sans préavis?",
+  "it": "Posso essere licenziato immediatamente senza preavviso?",
+  "en": "Can I be dismissed on the spot without any notice?"
+ },
+ "groq/openai/gpt-oss-20b:8ecd4f92105b8f5e": {
+  "q": "I was fired because I complained about my rights. What compensation can I get?",
+  "de": "Ich wurde entlassen, weil ich meine Rechte geltend gemacht habe. Welche Entschädigung kann ich fordern?",
+  "fr": "J'ai été licencié parce que j'ai revendiqué mes droits. Quelle indemnité puis-je obtenir?",
+  "it": "Sono stato licenziato perché ho fatto valere i miei diritti. Quale indennizzo posso ottenere?",
+  "en": "I was fired because I complained about my rights. What compensation can I get?"
+ },
+ "groq/openai/gpt-oss-20b:dec7d14cc25e4913": {
+  "q": "Do I get extra pay for overtime hours?",
+  "de": "Bekomme ich für Überstunden einen Zuschlag?",
+  "fr": "Reçois-je une majoration pour les heures supplémentaires?",
+  "it": "Ricevo un supplemento per le ore straordinarie?",
+  "en": "Do I get extra pay for overtime hours?"
+ },
+ "groq/openai/gpt-oss-20b:01296ccb714de415": {
+  "q": "Is my employer obliged to give me a work reference letter?",
+  "de": "Ist mein Arbeitgeber verpflichtet, mir ein Arbeitszeugnis auszustellen?",
+  "fr": "Mon employeur est-il tenu de me délivrer une attestation de travail?",
+  "it": "Il mio datore di lavoro è obbligato a fornirmi un certificato di lavoro?",
+  "en": "Is my employer obliged to give me a work reference letter?"
+ },
+ "groq/openai/gpt-oss-20b:8d10a41d0a63d50d": {
+  "q": "Who pays for my costs when I travel for work?",
+  "de": "Wer trägt die Kosten bei Dienstreisen?",
+  "fr": "Qui prend en charge les frais lors d'un déplacement professionnel?",
+  "it": "Chi copre le spese durante un viaggio di lavoro?",
+  "en": "Who pays for my costs when I travel for work?"
+ },
+ "groq/openai/gpt-oss-20b:e7f9dd9e00c70ebd": {
+  "q": "Is an employment contract valid if nothing was signed in writing?",
+  "de": "Ist ein Arbeitsvertrag wirksam, wenn nichts schriftlich unterzeichnet wurde?",
+  "fr": "Un contrat de travail est-il valable s'il n'a pas été signé par écrit?",
+  "it": "Un contratto di lavoro è valido se non è stato firmato per iscritto?",
+  "en": "Is an employment contract valid if nothing was signed in writing?"
+ }
+}
