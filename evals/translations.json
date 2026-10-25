@@ -82,5 +82,12 @@
   "fr": "Un contrat de travail est-il valable s'il n'a pas été signé par écrit?",
   "it": "Un contratto di lavoro è valido se non è stato firmato per iscritto?",
   "en": "Is an employment contract valid if nothing was signed in writing?"
+ },
+ "groq/openai/gpt-oss-20b:c5a74d5af3bbfd23": {
+  "q": "What is the maximum number of hours per week an office employee can be made to work?",
+  "de": "Wie viele Stunden pro Woche darf ein Büromitarbeiter maximal arbeiten?",
+  "fr": "Combien d'heures par semaine un employé de bureau peut-il être contraint de travailler au maximum?",
+  "it": "Quante ore settimanali un dipendente di ufficio può essere obbligato a lavorare al massimo?",
+  "en": "What is the maximum number of hours per week an office employee can be made to work?"
  }
 }
