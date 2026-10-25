@@ -7,126 +7,149 @@
 <meta name="description" content="Search Swiss federal law in German, French, Italian or English and read every article side by side in all four.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
 <style>
+/* White paper for long reading, black type, and Swiss red only where the eye
+   should land first. Each language has its own colour so a reader always knows
+   which text they are in; English is grey on purpose, because it is the one
+   text without legal force. */
 :root {
-  --ground: #EEF1F0; --paper: #FFFFFF; --ink: #172026; --muted: #55636C; --rule: #D2D9D8;
-  --petrol: #0E5E6F; --petrol-soft: #DCEBEC; --ochre: #8A5F00; --ochre-soft: #F6ECD3;
-  --sans: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-  --serif: "Spectral", Georgia, serif;
+  --paper: #FFFFFF; --ink: #000000; --soft: #5C5C5C; --hair: #E4E2DE; --wash: #F4F3F0;
+  --red: #DA291C; --red-dark: #A51E14;
+  --de: #1E4FA8; --fr: #0B7A55; --it: #B4500A; --en: #6E6E6E; --older: #8F5B00;
+  --sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Literata", Georgia, serif;
 }
 * { box-sizing: border-box; }
-html { background: var(--ground); color: var(--ink); }
-body { margin: 0; font: 16px/1.5 var(--sans); }
-a { color: var(--petrol); }
-:focus-visible { outline: 2px solid var(--petrol); outline-offset: 2px; }
-.wrap { max-width: 80rem; margin: 0 auto; padding-inline: 1.25rem; }
+html { background: var(--paper); color: var(--ink); }
+body { margin: 0; font: 400 17px/1.5 var(--sans); }
+a { color: var(--ink); text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.wrap { max-width: 84rem; margin-inline: auto; padding-inline: 1.25rem; }
 
-/* Search: the first thing on the page */
-.top { padding-block: 2.6rem 1.4rem; }
-.top h1 { font: 600 clamp(1.6rem, 3.2vw, 2.3rem)/1.15 var(--sans); letter-spacing: -0.015em; margin: 0; max-width: 30ch; }
-.top p { color: var(--muted); max-width: 64ch; margin: 0.6rem 0 0; }
-form.search { display: grid; grid-template-columns: 1fr auto; gap: 0; margin-top: 1.4rem; max-width: 52rem;
-  background: var(--paper); border: 1.5px solid var(--ink); border-radius: 6px; }
-form.search input { font: 400 1.15rem/1.3 var(--serif); border: 0; padding: 0.85rem 1rem; background: transparent; color: var(--ink); min-width: 0; }
+.hero { background: var(--red); color: #fff; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2rem; align-items: end; padding-block: 2.6rem 2.2rem; }
+.hero h1 { font: 800 clamp(2.1rem, 5vw, 3.8rem)/1 var(--sans); letter-spacing: -0.03em; margin: 0; }
+.hero p { margin: 0; font-size: 1.02rem; line-height: 1.55; max-width: 44ch; }
+.hero .langline { display: flex; gap: 0.35rem; margin-top: 1rem; }
+.hero .langline span { font-weight: 700; font-size: 0.85rem; background: #fff; padding: 0.15rem 0.5rem; }
+.langline .de { color: var(--de); } .langline .fr { color: var(--fr); } .langline .it { color: var(--it); } .langline .en { color: var(--en); }
+
+.searchzone { padding-block: 1.6rem 1.2rem; }
+form.search { display: grid; grid-template-columns: minmax(0, 1fr) auto; border: 3px solid var(--ink); max-width: 60rem; }
+form.search input { font: 400 1.3rem/1.3 var(--serif); border: 0; padding: 0.9rem 1rem; background: transparent; color: var(--ink); min-width: 0; }
 form.search input:focus { outline: none; }
-form.search:focus-within { box-shadow: 0 0 0 3px var(--petrol-soft); }
-.langs { display: flex; align-items: center; gap: 2px; padding: 0.35rem; }
-.langs button { font: 600 0.85rem var(--sans); border: 0; background: transparent; color: var(--muted); padding: 0.45rem 0.6rem; border-radius: 4px; cursor: pointer; }
-.langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.under { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; margin-top: 0.8rem; color: var(--muted); font-size: 0.9rem; }
-.under button.eg { font: italic 400 0.95rem var(--serif); color: var(--petrol); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
-.acts { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.9rem; }
-.acts label { font-size: 0.85rem; border: 1px solid var(--rule); background: var(--paper); border-radius: 4px; padding: 0.2rem 0.55rem; cursor: pointer; user-select: none; }
-.acts input { margin: 0 0.3rem 0 0; accent-color: var(--petrol); }
+form.search:focus-within { border-color: var(--red); }
+.langs { display: flex; }
+.langs button { font: 700 0.95rem var(--sans); border: 0; border-left: 3px solid var(--ink); background: var(--paper); color: var(--ink); padding: 0 1rem; cursor: pointer; }
+.langs button[data-l="de"] { --c: var(--de); } .langs button[data-l="fr"] { --c: var(--fr); }
+.langs button[data-l="it"] { --c: var(--it); } .langs button[data-l="en"] { --c: var(--en); }
+.langs button { color: var(--c); }
+.langs button[aria-pressed="true"] { background: var(--c); color: #fff; }
+.under { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; align-items: baseline; margin-top: 0.9rem; color: var(--soft); }
+.under button.eg { font: 400 1rem var(--serif); color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.acts { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.acts label { font-size: 0.9rem; background: var(--wash); padding: 0.3rem 0.65rem; cursor: pointer; user-select: none; }
+.acts label:has(input:checked) { background: var(--ink); color: #fff; }
+.acts label:has(input:checked) span { color: #BDBDBD !important; }
+.acts input { position: absolute; opacity: 0; pointer-events: none; }
 
-/* Results and the reading pane */
-.work { display: grid; grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr); gap: 1.4rem; align-items: start; padding-bottom: 3rem; }
-.results { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
-.results li button { display: block; width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--rule); padding: 0.7rem 0.4rem 0.75rem; cursor: pointer; color: var(--ink); font: inherit; }
-.results li button:hover { background: var(--paper); }
-.results li button[aria-current="true"] { background: var(--paper); box-shadow: inset 3px 0 0 var(--petrol); }
-.results .ref { font-weight: 600; font-size: 0.95rem; }
-.results .ref small { font-weight: 400; color: var(--muted); margin-left: 0.35rem; }
+.work { display: grid; grid-template-columns: minmax(15rem, 21rem) minmax(0, 1fr); gap: 2rem; align-items: start; padding-bottom: 3.5rem; }
+.results { list-style: none; margin: 0; padding: 0; }
+.results li button { display: block; width: 100%; text-align: left; background: none; border: 0; border-left: 6px solid transparent; padding: 0.7rem 0.8rem; cursor: pointer; color: var(--ink); font: inherit; }
+.results li button:hover { background: var(--wash); }
+.results li button[aria-current="true"] { background: var(--wash); border-left-color: var(--red); }
+.results .ref { font-weight: 800; font-size: 1.02rem; }
+.results .ref small { font-weight: 500; color: var(--soft); margin-left: 0.4rem; }
 .results .what { display: block; font: 400 1rem/1.35 var(--serif); margin-top: 0.15rem; }
-.empty { color: var(--muted); padding: 1rem 0.4rem; }
+.empty { color: var(--soft); padding: 1rem 0.8rem; }
 
-.reader { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; min-height: 20rem; }
-.reader header { padding: 1.1rem 1.3rem 0.9rem; border-bottom: 1px solid var(--rule); }
-.reader h2 { font: 600 1.35rem/1.2 var(--sans); margin: 0; }
-.reader .act { color: var(--muted); margin: 0.25rem 0 0; font-size: 0.92rem; }
-.tabs { display: none; gap: 2px; padding: 0.6rem 1rem 0; }
-.parallel { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); }
-.col { padding: 1rem 1.2rem 1.4rem; border-left: 1px solid var(--rule); min-width: 0; }
-.col:first-child { border-left: 0; }
-.col .lang { display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.6rem; }
-.col .lang b { color: var(--ink); font-weight: 600; font-size: 0.9rem; }
-.badge { font-size: 0.78rem; border-radius: 3px; padding: 0.05rem 0.4rem; white-space: nowrap; }
-.badge.binding { background: var(--petrol-soft); color: var(--petrol); }
-.badge.translation { background: var(--ground); color: var(--muted); }
-.badge.older { background: var(--ochre-soft); color: var(--ochre); }
-.col h3 { font: 600 1.05rem/1.3 var(--serif); margin: 0 0 0.6rem; }
-.col .trail { font-size: 0.8rem; color: var(--muted); margin: 0 0 0.7rem; }
-.col p { font: 400 1rem/1.62 var(--serif); margin: 0 0 0.65rem; hyphens: auto; }
-.col p .n { font: 600 0.78rem var(--sans); color: var(--petrol); vertical-align: 0.35em; margin-right: 0.25rem; }
-.col.missing { color: var(--muted); font-size: 0.92rem; }
-.col mark { background: #FFF1A8; color: inherit; padding: 0 1px; }
-.reader footer { padding: 0.8rem 1.3rem 1rem; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--muted); }
+.reader { min-height: 20rem; }
+.reader header { padding: 0 0 1rem; }
+.reader h2 { font: 800 clamp(1.8rem, 3.4vw, 2.6rem)/1 var(--sans); letter-spacing: -0.02em; margin: 0; }
+.reader .act { color: var(--soft); margin: 0.5rem 0 0; max-width: 70ch; }
+.tabs { display: none; gap: 0; }
+.tabs button { font: 700 0.95rem var(--sans); border: 0; background: var(--wash); padding: 0.55rem 1rem; cursor: pointer; }
+.parallel { display: grid; grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr)); gap: 1.4rem; }
+.col { border-top: 8px solid var(--c, var(--ink)); padding-top: 0.8rem; min-width: 0; }
+.col[data-l="de"] { --c: var(--de); } .col[data-l="fr"] { --c: var(--fr); } .col[data-l="it"] { --c: var(--it); } .col[data-l="en"] { --c: var(--en); }
+.col .lang { display: flex; flex-direction: column; gap: 0.05rem; font-size: 0.85rem; color: var(--soft); margin-bottom: 0.6rem; }
+.col .lang b { color: var(--c); font-weight: 800; font-size: 1rem; }
+.badge { display: inline-block; font-size: 0.82rem; font-weight: 700; padding: 0.1rem 0.5rem; color: #fff; background: var(--c); }
+.badge.translation { background: var(--wash); color: var(--en); }
+.badge.older { background: #FFF1CC; color: var(--older); }
+.col h3 { font: 600 1.08rem/1.3 var(--serif); margin: 0 0 0.5rem; }
+.col .trail { font-size: 0.82rem; color: var(--soft); margin: 0 0 0.7rem; }
+.col p { font: 400 1rem/1.65 var(--serif); margin: 0 0 0.7rem; hyphens: auto; }
+.col[data-l="en"] p { color: #3A3A3A; }
+.col p .n { font: 800 0.8rem var(--sans); color: var(--c); vertical-align: 0.35em; margin-right: 0.25rem; }
+.col.missing { color: var(--soft); font-size: 0.95rem; }
+.col mark { background: #FFE58A; color: inherit; padding: 0 1px; }
+.reader footer { margin-top: 1.4rem; padding-top: 1rem; border-top: 3px solid var(--ink); font-size: 0.9rem; color: var(--soft); }
 
-/* How well it works */
-.eval { background: var(--paper); border-top: 1px solid var(--rule); padding-block: 2.4rem 3rem; }
-.eval h2 { font: 600 1.4rem var(--sans); margin: 0 0 0.4rem; }
-.eval .lede { max-width: 68ch; color: var(--muted); margin: 0 0 1.4rem; }
-.modes { display: grid; gap: 0.55rem; max-width: 52rem; }
-.mode { display: grid; grid-template-columns: 17rem 1fr 4.2rem; gap: 0.9rem; align-items: center; }
-.mode .bar { height: 14px; background: var(--ground); border-radius: 2px; position: relative; overflow: hidden; }
-.mode .bar span { position: absolute; inset: 0 auto 0 0; background: var(--petrol); }
-.mode .bar span.k1 { background: var(--ink); }
-.mode .v { font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
-.key { font-size: 0.85rem; color: var(--muted); margin-top: 0.7rem; display: flex; gap: 1.2rem; flex-wrap: wrap; }
-.key i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -1px; margin-right: 0.35rem; }
-.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.4rem; margin-top: 2rem; max-width: 64rem; }
-.facts p { margin: 0; max-width: 46ch; }
-.facts b { display: block; font: 600 1.6rem var(--sans); }
-details.qs { margin-top: 2rem; max-width: 64rem; }
-details.qs summary { cursor: pointer; font-weight: 600; }
-table { border-collapse: collapse; width: 100%; font-size: 0.9rem; margin-top: 0.8rem; }
-th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
-th { color: var(--muted); font-weight: 500; }
+.eval { background: #EAF0F7; color: var(--ink); padding-block: 3rem 3.4rem; border-top: 8px solid var(--red); }
+.eval a { color: var(--ink); }
+.eval h2 { font: 800 clamp(1.7rem, 3.4vw, 2.5rem)/1.05 var(--sans); letter-spacing: -0.02em; margin: 0 0 0.8rem; max-width: 22ch; }
+.eval .lede { max-width: 70ch; color: #3C4450; margin: 0 0 1.8rem; }
+.modes { display: grid; gap: 0.9rem; max-width: 60rem; }
+.mode { display: grid; grid-template-columns: 17rem 1fr 4.5rem; gap: 1rem; align-items: center; }
+.mode .bar { height: 1.6rem; background: #D3DBE6; position: relative; overflow: hidden; }
+.mode .bar span { position: absolute; inset: 0 auto 0 0; background: #8E99A8; }
+.mode:last-child .bar span { background: var(--red); }
+.mode .bar span.k1 { background: #4A5361; }
+.mode:last-child .bar span.k1 { background: var(--red-dark); }
+.mode .v { font-weight: 800; font-size: 1.5rem; text-align: right; font-variant-numeric: tabular-nums; }
+.key { font-size: 0.9rem; color: #3C4450; margin-top: 0.9rem; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.key i { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 0.4rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.6rem; margin-top: 2.4rem; max-width: 70rem; }
+.facts p { margin: 0; color: #3C4450; border-top: 6px solid var(--red); padding-top: 0.8rem; }
+.facts b { display: block; font: 800 1.9rem/1.1 var(--sans); color: var(--ink); margin-bottom: 0.3rem; }
+details.qs { margin-top: 2.4rem; max-width: 70rem; }
+details.qs summary { cursor: pointer; font-weight: 700; }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin-top: 0.9rem; }
+th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid #CAD3DF; vertical-align: top; }
+th { color: #4A5361; font-weight: 500; }
 td.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-td.miss { color: var(--ochre); }
-.answers { margin-top: 2.2rem; max-width: 60rem; }
-.answer { border-left: 3px solid var(--petrol); padding: 0.2rem 0 0.2rem 1rem; margin: 1.2rem 0; }
-.answer h3 { font: 500 1.05rem/1.35 var(--serif); font-style: italic; margin: 0 0 0.5rem; }
-.answer li { margin: 0.35rem 0; }
-.answer .cite { font-size: 0.85rem; color: var(--muted); }
-.answer .disputed { color: var(--ochre); }
-.page-foot { padding-block: 1.6rem 2.6rem; color: var(--muted); font-size: 0.85rem; }
+td.miss { color: var(--red-dark); }
+.answers { margin-top: 2.4rem; max-width: 62rem; }
+.answer { border-left: 6px solid var(--red); padding: 0.2rem 0 0.2rem 1rem; margin: 1.2rem 0; }
+.answer h3 { font: 400 1.1rem/1.35 var(--serif); font-style: italic; margin: 0 0 0.5rem; }
+.answer .cite { font-size: 0.88rem; color: #4A5361; }
+.answer .disputed { color: var(--older); }
+.page-foot { padding-block: 1.8rem 2.6rem; color: var(--soft); font-size: 0.88rem; }
 .page-foot p { max-width: 80ch; margin: 0.3rem 0; }
 
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
+  .hero .wrap { grid-template-columns: 1fr; }
   .work { grid-template-columns: 1fr; }
-  .results { max-height: 21rem; overflow-y: auto; }
-  .tabs { display: flex; }
+  .results { max-height: 21rem; overflow-y: auto; border-bottom: 3px solid var(--ink); }
+  .tabs { display: flex; margin-bottom: 1rem; }
   .parallel { grid-template-columns: 1fr; }
-  .col { border-left: 0; display: none; }
+  .col { display: none; }
   .col.on { display: block; }
   .mode { grid-template-columns: 1fr 3.6rem; }
   .mode .bar { grid-column: 1 / -1; grid-row: 2; }
 }
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   form.search { grid-template-columns: 1fr; }
-  .langs { border-top: 1px solid var(--rule); }
+  .langs { border-top: 3px solid var(--ink); }
+  .langs button { flex: 1; padding: 0.6rem 0; }
+  .langs button:first-child { border-left: 0; }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .mode .bar span { transition: width 600ms ease-out; }
-}
+@media (prefers-reduced-motion: no-preference) { .mode .bar span { transition: width 700ms ease-out; } }
 </style>
 </head>
 <body>
-<header class="wrap top">
-  <h1>Find the article of Swiss federal law that answers your question.</h1>
-  <p>Search in German, French, Italian or English. Every article opens in all four languages side by side, with the date of each version, because only the German, French and Italian texts are legally binding.</p>
+<header class="hero">
+  <div class="wrap">
+    <h1>Swiss federal law, searched in four languages.</h1>
+    <div>
+      <p>Ask in German, French, Italian or English. Every article opens in all four, side by side, with the date of each version. Only German, French and Italian are legally binding, so the English text is shown in grey.</p>
+      <div class="langline" aria-hidden="true"><span class="de">Deutsch</span><span class="fr">Français</span><span class="it">Italiano</span><span class="en">English</span></div>
+    </div>
+  </div>
+</header>
+<div class="wrap searchzone">
   <form class="search" role="search" id="form">
     <input id="q" type="search" autocomplete="off" spellcheck="false" aria-label="Search the law" placeholder="Kündigungsfrist Probezeit">
     <div class="langs" role="group" aria-label="Language of your search">
@@ -143,7 +166,7 @@ td.miss { color: var(--ochre); }
     <button class="eg" data-l="it" data-q="lavoro domenicale">lavoro domenicale</button>
   </div>
   <div class="acts" id="acts" aria-label="Acts to search"></div>
-</header>
+</div>
 
 <main class="wrap work">
   <section aria-label="Results"><ol class="results" id="results"><li class="empty">Loading the law…</li></ol></section>
@@ -155,7 +178,7 @@ td.miss { color: var(--ochre); }
     <h2>Does searching in four languages find more?</h2>
     <p class="lede" id="eval-lede"></p>
     <div class="modes" id="modes"></div>
-    <div class="key"><span><i style="background:var(--ink)"></i>right article first</span><span><i style="background:var(--petrol)"></i>right article in the top five</span></div>
+    <div class="key"><span><i style="background:#4A5361"></i>right article first (red-dark for the four-language search)</span><span><i style="background:#8E99A8"></i>right article in the top five (red for the four-language search)</span></div>
     <div class="facts" id="facts"></div>
     <details class="qs"><summary>All questions and where the right article ranked</summary><div style="overflow-x:auto"><table id="qtable"></table></div></details>
     <div class="answers" id="answers"></div>
@@ -271,7 +294,7 @@ function renderArticle(id) {
 const ELI = act => "https://www.fedlex.admin.ch/eli/" + act.eli + "/" + (lang === "en" && act.version.en ? "en" : lang === "en" ? "de" : lang);
 function setTab(l) {
   document.querySelectorAll(".col").forEach(c => c.classList.toggle("on", c.dataset.l === l));
-  document.querySelectorAll(".langtab").forEach(b => { b.setAttribute("aria-selected", b.dataset.tab === l); b.style.cssText = b.dataset.tab === l ? "background:var(--ink);color:var(--paper)" : ""; });
+  document.querySelectorAll(".langtab").forEach(b => { b.setAttribute("aria-selected", b.dataset.tab === l); b.style.cssText = b.dataset.tab === l ? `background:var(--${l});color:#fff` : ""; });
 }
 
 function run() {
@@ -330,7 +353,7 @@ Promise.all([fetch("data/corpus.json").then(r => r.json()), fetch("data/results.
   .then(([d, R]) => {
     DATA = d; BY = Object.fromEntries(d.articles.map(a => [a.id, a])); ACTS = Object.fromEntries(d.acts.map(a => [a.eli, a]));
     activeActs = new Set(d.acts.map(a => a.eli));
-    $("#acts").innerHTML = d.acts.map(a => `<label title="${esc(a.title.en || a.title.de)}"><input type="checkbox" checked value="${esc(a.eli)}">${esc(a.short.de)}<span style="color:var(--muted)"> / ${esc(a.short.fr)}</span></label>`).join("");
+    $("#acts").innerHTML = d.acts.map(a => `<label title="${esc(a.title.en || a.title.de)}"><input type="checkbox" checked value="${esc(a.eli)}">${esc(a.short.de)}<span style="color:var(--soft)"> / ${esc(a.short.fr)}</span></label>`).join("");
     $("#acts").addEventListener("change", e => { e.target.checked ? activeActs.add(e.target.value) : activeActs.delete(e.target.value); run(); });
     $("#built").textContent = `${d.articles.length} articles from ${d.acts.length} acts, read from Fedlex on ${d.built}.`;
     renderEval(R);
