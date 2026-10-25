@@ -54,25 +54,25 @@ PAGE = r"""<!doctype html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
 <style>
-/* White paper for long reading, black type, and Swiss red only where the eye
-   should land first. Each language has its own colour so a reader always knows
-   which text they are in; English is grey on purpose, because it is the one
-   text without legal force. */
+/* White paper for long reading, ink-blue type, and cobalt where the eye should
+   land first. Each language has its own colour so a reader always knows which
+   text they are in; English is grey on purpose, because it is the one text
+   without legal force. Sunflower marks the words you searched for. */
 :root {
-  --paper: #FFFFFF; --ink: #000000; --soft: #5C5C5C; --hair: #E4E2DE; --wash: #F4F3F0;
-  --red: #DA291C; --red-dark: #A51E14;
-  --de: #1E4FA8; --fr: #0B7A55; --it: #B4500A; --en: #6E6E6E; --older: #8F5B00;
+  --paper: #FFFFFF; --ink: #0B1033; --soft: #4B5275; --hair: #DDE1F0; --wash: #F2F4FD;
+  --brand: #2443E8; --brand-dark: #1630B8;
+  --de: #2443E8; --fr: #0E8A60; --it: #B86E00; --en: #6B7090; --older: #8A6400;
   --sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
   --serif: "Literata", Georgia, serif;
 }
 * { box-sizing: border-box; }
 html { background: var(--paper); color: var(--ink); }
 body { margin: 0; font: 400 17px/1.5 var(--sans); }
-a { color: var(--ink); text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 3px; }
-:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+a { color: var(--ink); text-decoration-color: var(--brand); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
 .wrap { max-width: 84rem; margin-inline: auto; padding-inline: 1.25rem; }
 
-.hero { background: var(--red); color: #fff; }
+.hero { background: var(--brand); color: #fff; }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2rem; align-items: end; padding-block: 2.6rem 2.2rem; }
 .hero h1 { font: 800 clamp(2.1rem, 5vw, 3.8rem)/1 var(--sans); letter-spacing: -0.03em; margin: 0; }
 .hero p { margin: 0; font-size: 1.02rem; line-height: 1.55; max-width: 44ch; }
@@ -84,7 +84,7 @@ a { color: var(--ink); text-decoration-color: var(--red); text-decoration-thickn
 form.search { display: grid; grid-template-columns: minmax(0, 1fr) auto; border: 3px solid var(--ink); max-width: 60rem; }
 form.search input { font: 400 1.3rem/1.3 var(--serif); border: 0; padding: 0.9rem 1rem; background: transparent; color: var(--ink); min-width: 0; }
 form.search input:focus { outline: none; }
-form.search:focus-within { border-color: var(--red); }
+form.search:focus-within { border-color: var(--brand); }
 .langs { display: flex; }
 .langs button { font: 700 0.95rem var(--sans); border: 0; border-left: 3px solid var(--ink); background: var(--paper); color: var(--ink); padding: 0 1rem; cursor: pointer; }
 .langs button[data-l="de"] { --c: var(--de); } .langs button[data-l="fr"] { --c: var(--fr); }
@@ -92,7 +92,7 @@ form.search:focus-within { border-color: var(--red); }
 .langs button { color: var(--c); }
 .langs button[aria-pressed="true"] { background: var(--c); color: #fff; }
 .under { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; align-items: baseline; margin-top: 0.9rem; color: var(--soft); }
-.under button.eg { font: 400 1rem var(--serif); color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--red); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.under button.eg { font: 400 1rem var(--serif); color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--brand); text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .acts { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
 .acts label { font-size: 0.9rem; background: var(--wash); padding: 0.3rem 0.65rem; cursor: pointer; user-select: none; }
 .acts label:has(input:checked) { background: var(--ink); color: #fff; }
@@ -103,7 +103,7 @@ form.search:focus-within { border-color: var(--red); }
 .results { list-style: none; margin: 0; padding: 0; }
 .results li button { display: block; width: 100%; text-align: left; background: none; border: 0; border-left: 6px solid transparent; padding: 0.7rem 0.8rem; cursor: pointer; color: var(--ink); font: inherit; }
 .results li button:hover { background: var(--wash); }
-.results li button[aria-current="true"] { background: var(--wash); border-left-color: var(--red); }
+.results li button[aria-current="true"] { background: var(--wash); border-left-color: var(--brand); }
 .results .ref { font-weight: 800; font-size: 1.02rem; }
 .results .ref small { font-weight: 500; color: var(--soft); margin-left: 0.4rem; }
 .results .what { display: block; font: 400 1rem/1.35 var(--serif); margin-top: 0.15rem; }
@@ -122,44 +122,44 @@ form.search:focus-within { border-color: var(--red); }
 .col .lang b { color: var(--c); font-weight: 800; font-size: 1rem; }
 .badge { display: inline-block; font-size: 0.82rem; font-weight: 700; padding: 0.1rem 0.5rem; color: #fff; background: var(--c); }
 .badge.translation { background: var(--wash); color: var(--en); }
-.badge.older { background: #FFF1CC; color: var(--older); }
+.badge.older { background: #FFF6D1; color: var(--older); }
 .col h3 { font: 600 1.08rem/1.3 var(--serif); margin: 0 0 0.5rem; }
 .col .trail { font-size: 0.82rem; color: var(--soft); margin: 0 0 0.7rem; }
 .col p { font: 400 1rem/1.65 var(--serif); margin: 0 0 0.7rem; hyphens: auto; }
 .col[data-l="en"] p { color: #3A3A3A; }
 .col p .n { font: 800 0.8rem var(--sans); color: var(--c); vertical-align: 0.35em; margin-right: 0.25rem; }
 .col.missing { color: var(--soft); font-size: 0.95rem; }
-.col mark { background: #FFE58A; color: inherit; padding: 0 1px; }
+.col mark { background: #FFD23F; color: inherit; padding: 0 1px; }
 .reader footer { margin-top: 1.4rem; padding-top: 1rem; border-top: 3px solid var(--ink); font-size: 0.9rem; color: var(--soft); }
 
-.eval { background: #EAF0F7; color: var(--ink); padding-block: 3rem 3.4rem; border-top: 8px solid var(--red); }
+.eval { background: #F2F4FD; color: var(--ink); padding-block: 3rem 3.4rem; border-top: 8px solid var(--brand); }
 .eval a { color: var(--ink); }
 .eval h2 { font: 800 clamp(1.7rem, 3.4vw, 2.5rem)/1.05 var(--sans); letter-spacing: -0.02em; margin: 0 0 0.8rem; max-width: 22ch; }
-.eval .lede { max-width: 70ch; color: #3C4450; margin: 0 0 1.8rem; }
+.eval .lede { max-width: 70ch; color: #4B5275; margin: 0 0 1.8rem; }
 .modes { display: grid; gap: 0.9rem; max-width: 60rem; }
 .mode { display: grid; grid-template-columns: 17rem 1fr 4.5rem; gap: 1rem; align-items: center; }
-.mode .bar { height: 1.6rem; background: #D3DBE6; position: relative; overflow: hidden; }
-.mode .bar span { position: absolute; inset: 0 auto 0 0; background: #8E99A8; }
-.mode:last-child .bar span { background: var(--red); }
-.mode .bar span.k1 { background: #4A5361; }
-.mode:last-child .bar span.k1 { background: var(--red-dark); }
+.mode .bar { height: 1.6rem; background: #DDE1F0; position: relative; overflow: hidden; }
+.mode .bar span { position: absolute; inset: 0 auto 0 0; background: #A3A9C6; }
+.mode:last-child .bar span { background: var(--brand); }
+.mode .bar span.k1 { background: #4B5275; }
+.mode:last-child .bar span.k1 { background: var(--brand-dark); }
 .mode .v { font-weight: 800; font-size: 1.5rem; text-align: right; font-variant-numeric: tabular-nums; }
-.key { font-size: 0.9rem; color: #3C4450; margin-top: 0.9rem; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.key { font-size: 0.9rem; color: #4B5275; margin-top: 0.9rem; display: flex; gap: 1.4rem; flex-wrap: wrap; }
 .key i { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 0.4rem; }
 .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.6rem; margin-top: 2.4rem; max-width: 70rem; }
-.facts p { margin: 0; color: #3C4450; border-top: 6px solid var(--red); padding-top: 0.8rem; }
+.facts p { margin: 0; color: #4B5275; border-top: 6px solid var(--brand); padding-top: 0.8rem; }
 .facts b { display: block; font: 800 1.9rem/1.1 var(--sans); color: var(--ink); margin-bottom: 0.3rem; }
 details.qs { margin-top: 2.4rem; max-width: 70rem; }
 details.qs summary { cursor: pointer; font-weight: 700; }
 table { border-collapse: collapse; width: 100%; font-size: 0.92rem; margin-top: 0.9rem; }
-th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid #CAD3DF; vertical-align: top; }
-th { color: #4A5361; font-weight: 500; }
+th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid #DDE1F0; vertical-align: top; }
+th { color: #4B5275; font-weight: 500; }
 td.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-td.miss { color: var(--red-dark); }
+td.miss { color: var(--brand-dark); }
 .answers { margin-top: 2.4rem; max-width: 62rem; }
-.answer { border-left: 6px solid var(--red); padding: 0.2rem 0 0.2rem 1rem; margin: 1.2rem 0; }
+.answer { border-left: 6px solid var(--brand); padding: 0.2rem 0 0.2rem 1rem; margin: 1.2rem 0; }
 .answer h3 { font: 400 1.1rem/1.35 var(--serif); font-style: italic; margin: 0 0 0.5rem; }
-.answer .cite { font-size: 0.88rem; color: #4A5361; }
+.answer .cite { font-size: 0.88rem; color: #4B5275; }
 .answer .disputed { color: var(--older); }
 .page-foot { padding-block: 1.8rem 2.6rem; color: var(--soft); font-size: 0.88rem; }
 .page-foot p { max-width: 80ch; margin: 0.3rem 0; }
@@ -223,7 +223,7 @@ td.miss { color: var(--red-dark); }
     <h2>Does searching in four languages find more?</h2>
     <p class="lede" id="eval-lede"></p>
     <div class="modes" id="modes"></div>
-    <div class="key"><span><i style="background:#4A5361"></i>right article first (red-dark for the four-language search)</span><span><i style="background:#8E99A8"></i>right article in the top five (red for the four-language search)</span></div>
+    <div class="key"><span><i style="background:#4B5275"></i>right article first (dark cobalt for the four-language search)</span><span><i style="background:#A3A9C6"></i>right article in the top five (cobalt for the four-language search)</span></div>
     <div class="facts" id="facts"></div>
     <details class="qs"><summary>All questions and where the right article ranked</summary><div style="overflow-x:auto"><table id="qtable"></table></div></details>
     <div class="answers" id="answers"></div>
