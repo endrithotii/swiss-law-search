@@ -1,0 +1,2016 @@
+{
+ "rows": [
+  {
+   "id": "q01",
+   "q": "How much notice do I have to give if I quit during my trial period?",
+   "gold": [
+    "CO art_335_b"
+   ],
+   "translation": {
+    "de": "Wie lange ist die Kündigungsfrist bei einer Kündigung während der Probezeit?",
+    "fr": "Quelle est la durée du délai de préavis en cas de démission pendant la période d'essai?",
+    "it": "Qual è la durata del termine di preavviso in caso di dimissioni durante il periodo di prova?",
+    "en": "How much notice do I have to give if I quit during my trial period?"
+   },
+   "rank": {
+    "en": null,
+    "de": 1,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_354",
+     "CO art_266_a",
+     "CO art_406_e",
+     "DPO art_32",
+     "CO art_335_a"
+    ],
+    "de": [
+     "CO art_335_b",
+     "CO art_335_c",
+     "CO art_418_q",
+     "CO art_336_d",
+     "CO art_336_c"
+    ],
+    "official": [
+     "CO art_335_b",
+     "CO art_335_c",
+     "CO art_336_c",
+     "CO art_512",
+     "FADP art_44"
+    ],
+    "all": [
+     "CO art_335_b",
+     "CO art_335_c",
+     "CO art_512",
+     "CO art_266_a",
+     "CO art_336_c"
+    ]
+   }
+  },
+  {
+   "id": "q02",
+   "q": "I have worked at my company for three years. How long is my notice period?",
+   "gold": [
+    "CO art_335_c"
+   ],
+   "translation": {
+    "de": "Ich arbeite seit drei Jahren bei meinem Unternehmen. Wie lange ist meine Kündigungsfrist?",
+    "fr": "Je travaille dans mon entreprise depuis trois ans. Quelle est la durée de mon délai de préavis?",
+    "it": "Lavoro nella mia azienda da tre anni. Qual è la durata del mio termine di preavviso?",
+    "en": "I have worked at my company for three years. How long is my notice period?"
+   },
+   "rank": {
+    "en": 6,
+    "de": null,
+    "official": 2,
+    "all": 2
+   },
+   "top": {
+    "en": [
+     "CO art_678_a",
+     "CO art_336_c",
+     "CO art_324_a",
+     "CO art_418_q",
+     "CO art_844"
+    ],
+    "de": [
+     "CO art_964_l",
+     "CO art_876",
+     "CO art_678_a",
+     "CO art_67",
+     "CO art_919"
+    ],
+    "official": [
+     "CO art_678_a",
+     "CO art_335_c",
+     "CO art_730_a",
+     "CO art_335_b",
+     "CO art_760"
+    ],
+    "all": [
+     "CO art_678_a",
+     "CO art_335_c",
+     "CO art_760",
+     "CO art_335_b",
+     "CO art_919"
+    ]
+   }
+  },
+  {
+   "id": "q03",
+   "q": "Can my boss fire me while I am off sick?",
+   "gold": [
+    "CO art_336_c"
+   ],
+   "translation": {
+    "de": "Kann mein Arbeitgeber mich kündigen, während ich krankheitsbedingt abwesend bin?",
+    "fr": "Mon employeur peut-il me licencier alors que je suis absent pour maladie?",
+    "it": "Il mio datore di lavoro può licenziarmi mentre sono assente per malattia?",
+    "en": "Can my boss fire me while I am off sick?"
+   },
+   "rank": {
+    "en": null,
+    "de": 8,
+    "official": 3,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_329_d",
+     "FADP art_62",
+     "CO art_124",
+     "CO art_120",
+     "CO art_329"
+    ],
+    "de": [
+     "CO art_10",
+     "CO art_5",
+     "CO art_350",
+     "CO art_336_d",
+     "CO art_335_i"
+    ],
+    "official": [
+     "CO art_10",
+     "CO art_5",
+     "CO art_336_c",
+     "CO art_328_a",
+     "CO art_329_i"
+    ],
+    "all": [
+     "CO art_336_c",
+     "CO art_10",
+     "CO art_5",
+     "CO art_329",
+     "CO art_328_a"
+    ]
+   }
+  },
+  {
+   "id": "q04",
+   "q": "How many weeks of paid vacation am I entitled to each year?",
+   "gold": [
+    "CO art_329_a"
+   ],
+   "translation": {
+    "de": "Wie viele Wochen bezahlten Urlaub habe ich pro Jahr Anspruch?",
+    "fr": "Combien de semaines de congés payés me sont accordées chaque année?",
+    "it": "Quante settimane di ferie retribuite mi spettano ogni anno?",
+    "en": "How many weeks of paid vacation am I entitled to each year?"
+   },
+   "rank": {
+    "en": 1,
+    "de": 9,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_329_a",
+     "CO art_329_j",
+     "CO art_329_c",
+     "CO art_329_g_bis",
+     "CO art_329_i"
+    ],
+    "de": [
+     "CO art_329_h",
+     "CO art_329_j",
+     "CO art_329_g_bis",
+     "CO art_329_f",
+     "CO art_329_g"
+    ],
+    "official": [
+     "CO art_329_a",
+     "CO art_329_j",
+     "CO art_329_e",
+     "CO art_336_c",
+     "CO art_329_g_bis"
+    ],
+    "all": [
+     "CO art_329_a",
+     "CO art_329_j",
+     "CO art_329_e",
+     "CO art_329_g_bis",
+     "CO art_336_c"
+    ]
+   }
+  },
+  {
+   "id": "q05",
+   "q": "Does my employer have to keep paying my salary when I am ill and cannot work?",
+   "gold": [
+    "CO art_324_a"
+   ],
+   "translation": {
+    "de": "Muss mein Arbeitgeber meinen Lohn fortzahlen, wenn ich krank bin und nicht arbeiten kann?",
+    "fr": "Mon employeur doit-il continuer à verser mon salaire lorsque je suis malade et incapable de travailler?",
+    "it": "Il mio datore di lavoro deve continuare a versare il mio salario quando sono malato e non posso lavorare?",
+    "en": "Does my employer have to keep paying my salary when I am ill and cannot work?"
+   },
+   "rank": {
+    "en": null,
+    "de": 2,
+    "official": 1,
+    "all": 2
+   },
+   "top": {
+    "en": [
+     "CO art_321_c",
+     "CO art_353_b",
+     "CO art_324",
+     "CO art_329_d",
+     "CO art_353_a"
+    ],
+    "de": [
+     "CO art_326_a",
+     "CO art_324_a",
+     "CO art_351",
+     "CO art_351_a",
+     "CO art_326"
+    ],
+    "official": [
+     "CO art_324_a",
+     "CO art_324_b",
+     "CO art_326",
+     "CO art_353_b",
+     "CO art_326_a"
+    ],
+    "all": [
+     "CO art_324_b",
+     "CO art_324_a",
+     "CO art_353_b",
+     "CO art_326",
+     "CO art_324"
+    ]
+   }
+  },
+  {
+   "id": "q06",
+   "q": "Is the non-compete clause in my contract enforceable after I leave the job?",
+   "gold": [
+    "CO art_340",
+    "CO art_340_a"
+   ],
+   "translation": {
+    "de": "Ist die Wettbewerbsverbotsklausel in meinem Vertrag nach meinem Ausscheiden aus dem Unternehmen durchsetzbar?",
+    "fr": "La clause de non-concurrence de mon contrat est-elle exécutoire après mon départ de l'entreprise?",
+    "it": "La clausola di non concorrenza del mio contratto è eseguibile dopo la mia uscita dall'azienda?",
+    "en": "Is the non-compete clause in my contract enforceable after I leave the job?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": 2,
+    "all": 2
+   },
+   "top": {
+    "en": [
+     "CO art_329_f",
+     "CO art_335_c",
+     "CO art_328_b",
+     "CO art_329_e",
+     "CO art_192"
+    ],
+    "de": [
+     "CO art_375",
+     "CO art_581",
+     "DPO art_12",
+     "CO art_963",
+     "CO art_824"
+    ],
+    "official": [
+     "CO art_824",
+     "CO art_340",
+     "CO art_418_d",
+     "UCA art_8_a",
+     "CO art_735_c"
+    ],
+    "all": [
+     "CO art_824",
+     "CO art_340",
+     "CO art_418_d",
+     "UCA art_8_a",
+     "CO art_735_c"
+    ]
+   }
+  },
+  {
+   "id": "q07",
+   "q": "Can I be dismissed on the spot without any notice?",
+   "gold": [
+    "CO art_337"
+   ],
+   "translation": {
+    "de": "Kann ich ohne Kündigungsfrist sofort entlassen werden?",
+    "fr": "Puis-je être licencié immédiatement sans préavis?",
+    "it": "Posso essere licenziato immediatamente senza preavviso?",
+    "en": "Can I be dismissed on the spot without any notice?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "CO art_705",
+     "CO art_337_c",
+     "CO art_905",
+     "CO art_726",
+     "CO art_890"
+    ],
+    "de": [
+     "CO art_337_c",
+     "GEA art_6",
+     "CO art_844",
+     "CO art_418_q",
+     "CO art_335_a"
+    ],
+    "official": [
+     "CO art_337_c",
+     "CO art_418_r",
+     "CO art_231",
+     "CO art_686_a",
+     "CO art_264"
+    ],
+    "all": [
+     "CO art_337_c",
+     "CO art_335_c",
+     "CO art_296",
+     "CO art_266_f",
+     "CO art_418_r"
+    ]
+   }
+  },
+  {
+   "id": "q08",
+   "q": "I was fired because I complained about my rights. What compensation can I get?",
+   "gold": [
+    "CO art_336",
+    "CO art_336_a"
+   ],
+   "translation": {
+    "de": "Ich wurde entlassen, weil ich meine Rechte geltend gemacht habe. Welche Entschädigung kann ich fordern?",
+    "fr": "J'ai été licencié parce que j'ai revendiqué mes droits. Quelle indemnité puis-je obtenir?",
+    "it": "Sono stato licenziato perché ho fatto valere i miei diritti. Quale indennizzo posso ottenere?",
+    "en": "I was fired because I complained about my rights. What compensation can I get?"
+   },
+   "rank": {
+    "en": 3,
+    "de": 4,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_375",
+     "CO art_329_i",
+     "CO art_336",
+     "CO art_271_a",
+     "GEA art_13"
+    ],
+    "de": [
+     "CO art_336_b",
+     "CO art_337_c",
+     "GEA art_6",
+     "CO art_336",
+     "CO art_431"
+    ],
+    "official": [
+     "CO art_336",
+     "CO art_336_b",
+     "CO art_195",
+     "CO art_418_u",
+     "CO art_337_c"
+    ],
+    "all": [
+     "CO art_336",
+     "CO art_336_b",
+     "CO art_195",
+     "CO art_329_i",
+     "CO art_418_u"
+    ]
+   }
+  },
+  {
+   "id": "q09",
+   "q": "Do I get extra pay for overtime hours?",
+   "gold": [
+    "CO art_321_c"
+   ],
+   "translation": {
+    "de": "Bekomme ich für Überstunden einen Zuschlag?",
+    "fr": "Reçois-je une majoration pour les heures supplémentaires?",
+    "it": "Ricevo un supplemento per le ore straordinarie?",
+    "en": "Do I get extra pay for overtime hours?"
+   },
+   "rank": {
+    "en": 1,
+    "de": 5,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_321_c",
+     "CO art_79",
+     "CO art_319",
+     "CO art_195",
+     "CO art_483"
+    ],
+    "de": [
+     "CO art_235",
+     "CO art_229",
+     "DPO art_44",
+     "EmpA art_13",
+     "CO art_321_c"
+    ],
+    "official": [
+     "CO art_321_c",
+     "EmpA art_13",
+     "EmpA art_17_b",
+     "EmpA art_12",
+     "DPO art_44"
+    ],
+    "all": [
+     "CO art_321_c",
+     "EmpA art_13",
+     "CO art_79",
+     "EmpA art_17_b",
+     "EmpA art_12"
+    ]
+   }
+  },
+  {
+   "id": "q10",
+   "q": "Is my employer obliged to give me a work reference letter?",
+   "gold": [
+    "CO art_330_a"
+   ],
+   "translation": {
+    "de": "Ist mein Arbeitgeber verpflichtet, mir ein Arbeitszeugnis auszustellen?",
+    "fr": "Mon employeur est-il tenu de me délivrer une attestation de travail?",
+    "it": "Il mio datore di lavoro è obbligato a fornirmi un certificato di lavoro?",
+    "en": "Is my employer obliged to give me a work reference letter?"
+   },
+   "rank": {
+    "en": 1,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "CO art_330_a",
+     "CO art_326_a",
+     "CO art_352_a",
+     "CO art_324_a",
+     "CO art_328_a"
+    ],
+    "de": [
+     "CO art_346_a",
+     "CO art_1061",
+     "EmpA art_6",
+     "CO art_351",
+     "CO art_326"
+    ],
+    "official": [
+     "CO art_326",
+     "CO art_353",
+     "CO art_326_a",
+     "CO art_328_a",
+     "CO art_324"
+    ],
+    "all": [
+     "CO art_326",
+     "CO art_326_a",
+     "CO art_353",
+     "CO art_328_a",
+     "CO art_324"
+    ]
+   }
+  },
+  {
+   "id": "q11",
+   "q": "Who pays for my costs when I travel for work?",
+   "gold": [
+    "CO art_327_a"
+   ],
+   "translation": {
+    "de": "Wer trägt die Kosten bei Dienstreisen?",
+    "fr": "Qui prend en charge les frais lors d'un déplacement professionnel?",
+    "it": "Chi copre le spese durante un viaggio di lavoro?",
+    "en": "Who pays for my costs when I travel for work?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "CO art_406_b",
+     "CO art_377",
+     "CO art_45",
+     "CO art_960_c",
+     "CO art_347_a"
+    ],
+    "de": [
+     "CO art_697_h_bis",
+     "CO art_188",
+     "CO art_307",
+     "CO art_1176",
+     "EmpA art_17_c"
+    ],
+    "official": [
+     "CO art_188",
+     "CO art_697_h_bis",
+     "CO art_1163",
+     "EmpA art_17_c",
+     "CO art_348_a"
+    ],
+    "all": [
+     "CO art_697_h_bis",
+     "CO art_188",
+     "CO art_1163",
+     "CO art_406_b",
+     "CO art_189"
+    ]
+   }
+  },
+  {
+   "id": "q12",
+   "q": "Is an employment contract valid if nothing was signed in writing?",
+   "gold": [
+    "CO art_320"
+   ],
+   "translation": {
+    "de": "Ist ein Arbeitsvertrag wirksam, wenn nichts schriftlich unterzeichnet wurde?",
+    "fr": "Un contrat de travail est-il valable s'il n'a pas été signé par écrit?",
+    "it": "Un contratto di lavoro è valido se non è stato firmato per iscritto?",
+    "en": "Is an employment contract valid if nothing was signed in writing?"
+   },
+   "rank": {
+    "en": 8,
+    "de": null,
+    "official": 8,
+    "all": 4
+   },
+   "top": {
+    "en": [
+     "CO art_356_c",
+     "CO art_165",
+     "CO art_13",
+     "CO art_216",
+     "CO art_360"
+    ],
+    "de": [
+     "CO art_713",
+     "CO art_556",
+     "CO art_597",
+     "CO art_330_b",
+     "CO art_936_a"
+    ],
+    "official": [
+     "CO art_360",
+     "CO art_321_c",
+     "CO art_997",
+     "CO art_556",
+     "CO art_597"
+    ],
+    "all": [
+     "CO art_360",
+     "CO art_321_c",
+     "CO art_13",
+     "CO art_320",
+     "CO art_359_a"
+    ]
+   }
+  },
+  {
+   "id": "q13",
+   "q": "What is the maximum number of hours per week an office employee can be made to work?",
+   "gold": [
+    "EmpA art_9"
+   ],
+   "translation": {
+    "de": "Wie viele Stunden pro Woche darf ein Büromitarbeiter maximal arbeiten?",
+    "fr": "Combien d'heures par semaine un employé de bureau peut-il être contraint de travailler au maximum?",
+    "it": "Quante ore settimanali un dipendente di ufficio può essere obbligato a lavorare al massimo?",
+    "en": "What is the maximum number of hours per week an office employee can be made to work?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": 3,
+    "all": 4
+   },
+   "top": {
+    "en": [
+     "CO art_329",
+     "CO art_329_i",
+     "CO art_329_a",
+     "CO art_319",
+     "CO art_329_g_bis"
+    ],
+    "de": [
+     "EmpA art_15_a",
+     "EmpA art_20",
+     "EmpA art_17_b",
+     "EmpA art_36",
+     "EmpA art_15"
+    ],
+    "official": [
+     "EmpA art_12",
+     "EmpA art_20",
+     "EmpA art_9",
+     "EmpA art_21",
+     "CO art_319"
+    ],
+    "all": [
+     "CO art_319",
+     "EmpA art_12",
+     "EmpA art_20",
+     "EmpA art_9",
+     "EmpA art_21"
+    ]
+   }
+  },
+  {
+   "id": "q14",
+   "q": "How long a break am I entitled to during a long working day?",
+   "gold": [
+    "EmpA art_15"
+   ],
+   "translation": {
+    "de": "Wie lange Pause habe ich während eines langen Arbeitstages Anspruch?",
+    "fr": "Quelle est la durée de la pause à laquelle je suis droit pendant une journée de travail longue?",
+    "it": "Qual è la durata della pausa a cui ho diritto durante una lunga giornata di lavoro?",
+    "en": "How long a break am I entitled to during a long working day?"
+   },
+   "rank": {
+    "en": null,
+    "de": 1,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_329_f",
+     "CO art_329_j",
+     "CO art_329_i",
+     "CO art_329_g",
+     "CO art_1081"
+    ],
+    "de": [
+     "EmpA art_15",
+     "CO art_418_u",
+     "CO art_587",
+     "EmpA art_20",
+     "EmpA art_17_b"
+    ],
+    "official": [
+     "EmpA art_15",
+     "EmpA art_17_a",
+     "EmpA art_17_b",
+     "EmpA art_10",
+     "CO art_319"
+    ],
+    "all": [
+     "EmpA art_15",
+     "EmpA art_17_a",
+     "EmpA art_17_b",
+     "CO art_324_a",
+     "EmpA art_10"
+    ]
+   }
+  },
+  {
+   "id": "q15",
+   "q": "Is my employer allowed to make me work on Sundays?",
+   "gold": [
+    "EmpA art_18",
+    "EmpA art_19"
+   ],
+   "translation": {
+    "de": "Darf mein Arbeitgeber mich am Sonntag arbeiten lassen?",
+    "fr": "Mon employeur peut-il me faire travailler le dimanche?",
+    "it": "Il mio datore di lavoro può farmi lavorare la domenica?",
+    "en": "Is my employer allowed to make me work on Sundays?"
+   },
+   "rank": {
+    "en": null,
+    "de": 4,
+    "official": 3,
+    "all": 8
+   },
+   "top": {
+    "en": [
+     "CO art_329",
+     "CO art_78",
+     "CO art_1081",
+     "CO art_340",
+     "CO art_345_a"
+    ],
+    "de": [
+     "EmpA art_20_a",
+     "EmpA art_20",
+     "EmpA art_17_c",
+     "EmpA art_19",
+     "CO art_337_c"
+    ],
+    "official": [
+     "EmpA art_20_a",
+     "EmpA art_20",
+     "EmpA art_18",
+     "CO art_344",
+     "CO art_324"
+    ],
+    "all": [
+     "CO art_329",
+     "CO art_324",
+     "EmpA art_20_a",
+     "CO art_340",
+     "EmpA art_20"
+    ]
+   }
+  },
+  {
+   "id": "q16",
+   "q": "When is night work allowed?",
+   "gold": [
+    "EmpA art_16",
+    "EmpA art_17"
+   ],
+   "translation": {
+    "de": "Wann ist Nachtarbeit zulässig?",
+    "fr": "Quand le travail de nuit est-il autorisé?",
+    "it": "Quando è consentito il lavoro notturno?",
+    "en": "When is night work allowed?"
+   },
+   "rank": {
+    "en": null,
+    "de": 1,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_329",
+     "CO art_329_a",
+     "CO art_345_a",
+     "CO art_340",
+     "GEA art_7"
+    ],
+    "de": [
+     "EmpA art_17",
+     "EmpA art_17_d",
+     "EmpA art_16",
+     "GEA art_17_a",
+     "EmpA art_17_a"
+    ],
+    "official": [
+     "EmpA art_17",
+     "EmpA art_17_d",
+     "EmpA art_16",
+     "EmpA art_17_e",
+     "EmpA art_17_a"
+    ],
+    "all": [
+     "EmpA art_17",
+     "EmpA art_17_d",
+     "EmpA art_16",
+     "EmpA art_17_e",
+     "EmpA art_17_a"
+    ]
+   }
+  },
+  {
+   "id": "q17",
+   "q": "What protections do pregnant employees have at work?",
+   "gold": [
+    "EmpA art_35",
+    "EmpA art_35_a"
+   ],
+   "translation": {
+    "de": "Welche Schutzbestimmungen gelten für schwangere Arbeitnehmerinnen am Arbeitsplatz?",
+    "fr": "Quelles dispositions de protection sont prévues pour les employées enceintes sur le lieu de travail?",
+    "it": "Quali misure di protezione sono previste per le lavoratrici in gravidanza sul posto di lavoro?",
+    "en": "What protections do pregnant employees have at work?"
+   },
+   "rank": {
+    "en": null,
+    "de": 1,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_328_a",
+     "DPO art_26",
+     "CO art_328",
+     "DPO art_36",
+     "GEA art_3"
+    ],
+    "de": [
+     "EmpA art_35_a",
+     "EmpA art_26",
+     "GEA art_13_g",
+     "EmpA art_35",
+     "EmpA art_15"
+    ],
+    "official": [
+     "EmpA art_35",
+     "EmpA art_35_a",
+     "EmpA art_35_b",
+     "CO art_336_c",
+     "EmpA art_59"
+    ],
+    "all": [
+     "EmpA art_35",
+     "CO art_328_a",
+     "GEA art_3",
+     "CO art_328",
+     "EmpA art_35_a"
+    ]
+   }
+  },
+  {
+   "id": "q18",
+   "q": "What counts as sexual harassment at the workplace and what can the victim claim?",
+   "gold": [
+    "GEA art_4",
+    "GEA art_5"
+   ],
+   "translation": {
+    "de": "Was gilt als sexuelle Belästigung am Arbeitsplatz und welche Ansprüche kann die Betroffene geltend machen?",
+    "fr": "Qu'est-ce qui constitue un harcèlement sexuel au travail et quelles réclamations la victime peut-elle faire?",
+    "it": "Cosa costituisce molestie sessuali sul posto di lavoro e quali richieste può fare la vittima?",
+    "en": "What counts as sexual harassment at the workplace and what can the victim claim?"
+   },
+   "rank": {
+    "en": 1,
+    "de": 1,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "GEA art_4",
+     "CO art_328",
+     "GEA art_5",
+     "GEA art_14",
+     "CO art_47"
+    ],
+    "de": [
+     "GEA art_4",
+     "GEA art_5",
+     "CO art_328",
+     "CO art_336_b",
+     "DPO art_17"
+    ],
+    "official": [
+     "GEA art_4",
+     "GEA art_5",
+     "CO art_328",
+     "EmpA art_51",
+     "CO art_518"
+    ],
+    "all": [
+     "GEA art_4",
+     "CO art_328",
+     "GEA art_5",
+     "EmpA art_51",
+     "CO art_518"
+    ]
+   }
+  },
+  {
+   "id": "q19",
+   "q": "Does a company with 150 staff have to check whether men and women are paid equally?",
+   "gold": [
+    "GEA art_13_a"
+   ],
+   "translation": {
+    "de": "Muss ein Unternehmen mit 150 Beschäftigten die Gleichbehandlung von Männern und Frauen in der Bezahlung prüfen?",
+    "fr": "Un établissement de 150 salariés doit-il vérifier l'égalité de rémunération entre hommes et femmes?",
+    "it": "Un'azienda con 150 dipendenti deve verificare l'uguaglianza salariale tra uomini e donne?",
+    "en": "Does a company with 150 staff have to check whether men and women are paid equally?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "GEA art_1",
+     "GEA art_15",
+     "GEA art_4",
+     "DPO art_44",
+     "GEA art_16"
+    ],
+    "de": [
+     "GEA art_1",
+     "GEA art_16",
+     "GEA art_15",
+     "EmpA art_35_a",
+     "EmpA art_35_b"
+    ],
+    "official": [
+     "GEA art_1",
+     "GEA art_16",
+     "GEA art_15",
+     "GEA art_14",
+     "EmpA art_35_b"
+    ],
+    "all": [
+     "GEA art_1",
+     "GEA art_16",
+     "GEA art_15",
+     "GEA art_14",
+     "EmpA art_35_b"
+    ]
+   }
+  },
+  {
+   "id": "q20",
+   "q": "Do I have to prove gender discrimination myself, or does the employer have to disprove it?",
+   "gold": [
+    "GEA art_6"
+   ],
+   "translation": {
+    "de": "Trage ich die Beweislast für Geschlechterdiskriminierung, oder muss der Arbeitgeber sie widerlegen?",
+    "fr": "Est-ce que je dois prouver la discrimination fondée sur le sexe moi-même, ou l'employeur doit-il la réfuter ?",
+    "it": "Devo dimostrare personalmente la discriminazione di genere, o l'azienda deve dimostrare di non averla commessa?",
+    "en": "Do I have to prove gender discrimination myself, or does the employer have to disprove it?"
+   },
+   "rank": {
+    "en": 10,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "GEA art_16",
+     "GEA art_7",
+     "GEA art_5",
+     "CO art_734_f",
+     "GEA art_8"
+    ],
+    "de": [
+     "CO art_348_a",
+     "CO art_327_a",
+     "CO art_1064",
+     "PLA art_6",
+     "CO art_13"
+    ],
+    "official": [
+     "GEA art_5",
+     "GEA art_3",
+     "GEA art_8",
+     "GEA art_4",
+     "CO art_348_a"
+    ],
+    "all": [
+     "GEA art_5",
+     "GEA art_3",
+     "GEA art_8",
+     "GEA art_4",
+     "CO art_356"
+    ]
+   }
+  },
+  {
+   "id": "q21",
+   "q": "We had a cyber attack and customer data leaked. Do we have to report it to the authorities?",
+   "gold": [
+    "FADP art_24"
+   ],
+   "translation": {
+    "de": "Wir hatten einen Cyberangriff und Kundendaten wurden offengelegt. Sind wir verpflichtet, dies den Behörden zu melden?",
+    "fr": "Nous avons subi une cyberattaque et des données clients ont été divulguées. Sommes-nous tenus de les signaler aux autorités?",
+    "it": "Abbiamo subito un attacco informatico e i dati dei clienti sono stati divulgati. Siamo tenuti a comunicarlo alle autorità?",
+    "en": "We had a cyber attack and customer data leaked. Do we have to report it to the authorities?"
+   },
+   "rank": {
+    "en": 9,
+    "de": 10,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "FADP art_54",
+     "DPO art_37_a",
+     "UCA art_22",
+     "FADP art_53",
+     "DPO art_25"
+    ],
+    "de": [
+     "DPO art_15",
+     "CO art_299_a",
+     "CO art_267_a",
+     "CO art_286",
+     "CO art_960_b"
+    ],
+    "official": [
+     "FADP art_55",
+     "EmpA art_54",
+     "CO art_267_a",
+     "CO art_299_a",
+     "FADP art_54"
+    ],
+    "all": [
+     "FADP art_55",
+     "FADP art_54",
+     "UCA art_22",
+     "FADP art_53",
+     "FADP art_4"
+    ]
+   }
+  },
+  {
+   "id": "q22",
+   "q": "How can I find out what personal data a company holds about me?",
+   "gold": [
+    "FADP art_25"
+   ],
+   "translation": {
+    "de": "Wie kann ich herausfinden, welche personenbezogenen Daten ein Unternehmen über mich besitzt?",
+    "fr": "Comment puis‑je savoir quelles données à caractère personnel une entreprise détient à mon sujet?",
+    "it": "Come posso scoprire quali dati personali un'azienda detiene su di me?",
+    "en": "How can I find out what personal data a company holds about me?"
+   },
+   "rank": {
+    "en": 5,
+    "de": null,
+    "official": null,
+    "all": 8
+   },
+   "top": {
+    "en": [
+     "FADP art_57",
+     "DPO art_9",
+     "DPO art_29",
+     "DPO art_4",
+     "FADP art_25"
+    ],
+    "de": [
+     "FADP art_39",
+     "FADP art_31",
+     "DPO art_35",
+     "EmpA art_44_a",
+     "CO art_219"
+    ],
+    "official": [
+     "FADP art_31",
+     "DPO art_20",
+     "CO art_772",
+     "FADP art_39",
+     "EmpA art_9"
+    ],
+    "all": [
+     "DPO art_20",
+     "FADP art_31",
+     "FADP art_5",
+     "FADP art_19",
+     "FADP art_41"
+    ]
+   }
+  },
+  {
+   "id": "q23",
+   "q": "How many days does a company have to answer my request to see my data?",
+   "gold": [
+    "DPO art_18"
+   ],
+   "translation": {
+    "de": "Wie viele Tage hat ein Unternehmen, um auf meine Anfrage zur Auskunft über meine personenbezogenen Daten zu antworten?",
+    "fr": "Combien de jours une entreprise a-t-elle pour répondre à ma demande d'accès à mes données à caractère personnel?",
+    "it": "Quanti giorni ha un'azienda per rispondere alla mia richiesta di accesso ai miei dati personali?",
+    "en": "How many days does a company have to answer my request to see my data?"
+   },
+   "rank": {
+    "en": 2,
+    "de": 9,
+    "official": 7,
+    "all": 3
+   },
+   "top": {
+    "en": [
+     "DPO art_17",
+     "DPO art_18",
+     "CO art_702",
+     "DPO art_19",
+     "CO art_685_g"
+    ],
+    "de": [
+     "FADP art_39",
+     "CO art_697_b",
+     "FADP art_31",
+     "DPO art_16",
+     "FADP art_15"
+    ],
+    "official": [
+     "FADP art_27",
+     "DPO art_17",
+     "DPO art_16",
+     "FADP art_26",
+     "DPO art_4"
+    ],
+    "all": [
+     "DPO art_17",
+     "DPO art_16",
+     "DPO art_18",
+     "FADP art_25",
+     "FADP art_27"
+    ]
+   }
+  },
+  {
+   "id": "q24",
+   "q": "When do we need to carry out a data protection impact assessment?",
+   "gold": [
+    "FADP art_22"
+   ],
+   "translation": {
+    "de": "Wann ist eine Datenschutz-Folgenabschätzung durchzuführen?",
+    "fr": "Quand doit-on réaliser une évaluation d'impact relative à la protection des données?",
+    "it": "Quando è necessario effettuare una valutazione d'impatto sulla protezione dei dati?",
+    "en": "When do we need to carry out a data protection impact assessment?"
+   },
+   "rank": {
+    "en": 1,
+    "de": 2,
+    "official": 2,
+    "all": 2
+   },
+   "top": {
+    "en": [
+     "FADP art_22",
+     "DPO art_14",
+     "DPO art_26",
+     "FADP art_58",
+     "DPO art_4"
+    ],
+    "de": [
+     "DPO art_14",
+     "FADP art_22",
+     "FADP art_59",
+     "DPO art_26",
+     "GEA art_17_a"
+    ],
+    "official": [
+     "DPO art_14",
+     "FADP art_22",
+     "DPO art_26",
+     "FADP art_59",
+     "FADP art_23"
+    ],
+    "all": [
+     "DPO art_14",
+     "FADP art_22",
+     "DPO art_26",
+     "FADP art_59",
+     "FADP art_23"
+    ]
+   }
+  },
+  {
+   "id": "q25",
+   "q": "Can we send customer data to a server in the United States?",
+   "gold": [
+    "FADP art_16",
+    "FADP art_17"
+   ],
+   "translation": {
+    "de": "Können wir Kundendaten an einen Server in den Vereinigten Staaten übertragen?",
+    "fr": "Pouvons‑nous transférer des données clients vers un serveur aux États‑Unis ?",
+    "it": "Possiamo trasferire i dati dei clienti su un server negli Stati Uniti?",
+    "en": "Can we send customer data to a server in the United States?"
+   },
+   "rank": {
+    "en": null,
+    "de": 3,
+    "official": 2,
+    "all": 2
+   },
+   "top": {
+    "en": [
+     "DPO art_28",
+     "UCA art_22",
+     "CO art_6_a",
+     "DPO art_26",
+     "UCA art_3"
+    ],
+    "de": [
+     "DPO art_8",
+     "FADP art_72",
+     "FADP art_16",
+     "FADP art_29",
+     "CO art_292"
+    ],
+    "official": [
+     "DPO art_8",
+     "FADP art_16",
+     "CO art_418_o",
+     "CO art_263",
+     "CO art_418_g"
+    ],
+    "all": [
+     "DPO art_8",
+     "FADP art_16",
+     "CO art_418_o",
+     "DPO art_33",
+     "FADP art_72"
+    ]
+   }
+  },
+  {
+   "id": "q26",
+   "q": "What must we tell people when we collect their personal data?",
+   "gold": [
+    "FADP art_19"
+   ],
+   "translation": {
+    "de": "Was müssen wir Personen mitteilen, wenn wir ihre personenbezogenen Daten erheben?",
+    "fr": "Que devons-nous informer les personnes lorsque nous recueillons leurs données à caractère personnel?",
+    "it": "Cosa dobbiamo comunicare alle persone quando raccogliamo i loro dati personali?",
+    "en": "What must we tell people when we collect their personal data?"
+   },
+   "rank": {
+    "en": 1,
+    "de": null,
+    "official": 2,
+    "all": 2
+   },
+   "top": {
+    "en": [
+     "FADP art_19",
+     "FADP art_6",
+     "FADP art_25",
+     "FADP art_31",
+     "DPO art_4"
+    ],
+    "de": [
+     "FADP art_39",
+     "FADP art_31",
+     "EmpA art_44_a",
+     "FADP art_71",
+     "CO art_928_b"
+    ],
+    "official": [
+     "FADP art_31",
+     "FADP art_19",
+     "FADP art_5",
+     "FADP art_71",
+     "EmpA art_44_a"
+    ],
+    "all": [
+     "FADP art_31",
+     "FADP art_19",
+     "FADP art_5",
+     "FADP art_6",
+     "DPO art_30"
+    ]
+   }
+  },
+  {
+   "id": "q27",
+   "q": "Does a small startup with 20 employees need to keep a register of its data processing?",
+   "gold": [
+    "DPO art_24",
+    "FADP art_12"
+   ],
+   "translation": {
+    "de": "Muss ein kleines Startup mit 20 Mitarbeitern ein Verzeichnis seiner Datenverarbeitung führen?",
+    "fr": "Un petit startup de 20 salariés doit-il tenir un registre de son traitement de données ?",
+    "it": "Una piccola startup con 20 dipendenti deve tenere un registro del suo trattamento dei dati?",
+    "en": "Does a small startup with 20 employees need to keep a register of its data processing?"
+   },
+   "rank": {
+    "en": 1,
+    "de": 1,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "DPO art_24",
+     "FADP art_56",
+     "DPO art_42",
+     "FADP art_12",
+     "FADP art_2"
+    ],
+    "de": [
+     "DPO art_24",
+     "FADP art_12",
+     "CO art_837",
+     "CO art_259",
+     "CO art_730"
+    ],
+    "official": [
+     "DPO art_24",
+     "FADP art_12",
+     "DPO art_42",
+     "FADP art_56",
+     "DPO art_23"
+    ],
+    "all": [
+     "DPO art_24",
+     "FADP art_12",
+     "FADP art_56",
+     "DPO art_42",
+     "DPO art_31"
+    ]
+   }
+  },
+  {
+   "id": "q28",
+   "q": "Do we have to appoint a data protection officer?",
+   "gold": [
+    "FADP art_10"
+   ],
+   "translation": {
+    "de": "Müssen wir einen Datenschutzbeauftragten bestellen?",
+    "fr": "Doit-on désigner un délégué à la protection des données?",
+    "it": "Dobbiamo nominare un responsabile della protezione dei dati?",
+    "en": "Do we have to appoint a data protection officer?"
+   },
+   "rank": {
+    "en": 2,
+    "de": null,
+    "official": 2,
+    "all": 2
+   },
+   "top": {
+    "en": [
+     "DPO art_25",
+     "FADP art_10",
+     "DPO art_23",
+     "DPO art_27",
+     "DPO art_5"
+    ],
+    "de": [
+     "CO art_768",
+     "CO art_365",
+     "CO art_789_a",
+     "CO art_789_b",
+     "CO art_1158"
+    ],
+    "official": [
+     "DPO art_25",
+     "FADP art_10",
+     "DPO art_10",
+     "FADP art_16",
+     "DPO art_23"
+    ],
+    "all": [
+     "DPO art_25",
+     "FADP art_10",
+     "DPO art_23",
+     "DPO art_10",
+     "DPO art_27"
+    ]
+   }
+  },
+  {
+   "id": "q29",
+   "q": "How big can the fine be for breaking the data protection law?",
+   "gold": [
+    "FADP art_60",
+    "FADP art_61",
+    "FADP art_63"
+   ],
+   "translation": {
+    "de": "Wie hoch kann die Geldstrafe bei Verstößen gegen das Datenschutzgesetz sein?",
+    "fr": "Quelle est la hauteur maximale d'une amende pour violation de la loi sur la protection des données?",
+    "it": "Qual è l'importo massimo della multa per violazione della legge sulla protezione dei dati?",
+    "en": "How big can the fine be for breaking the data protection law?"
+   },
+   "rank": {
+    "en": 6,
+    "de": null,
+    "official": 10,
+    "all": 6
+   },
+   "top": {
+    "en": [
+     "DPO art_8",
+     "FADP art_48",
+     "FADP art_16",
+     "FADP art_22",
+     "FADP art_10"
+    ],
+    "de": [
+     "CO art_728_c",
+     "FADP art_52",
+     "EmpA art_61",
+     "FADP art_49",
+     "CO art_891"
+    ],
+    "official": [
+     "FADP art_49",
+     "FADP art_53",
+     "FADP art_52",
+     "EmpA art_61",
+     "FADP art_51"
+    ],
+    "all": [
+     "FADP art_49",
+     "FADP art_53",
+     "CO art_328_b",
+     "FADP art_51",
+     "CO art_406_g"
+    ]
+   }
+  },
+  {
+   "id": "q30",
+   "q": "An algorithm rejected my application automatically. Do they have to tell me?",
+   "gold": [
+    "FADP art_21"
+   ],
+   "translation": {
+    "de": "Ein Algorithmus hat meinen Antrag automatisch abgelehnt. Müssen sie mir dies mitteilen?",
+    "fr": "Un algorithme a rejeté ma demande automatiquement. Doivent-ils me le communiquer?",
+    "it": "Un algoritmo ha respinto la mia domanda automaticamente. Devono comunicarmelo?",
+    "en": "An algorithm rejected my application automatically. Do they have to tell me?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "GEA art_13",
+     "CO art_849",
+     "CO art_697_d",
+     "CO art_6",
+     "CO art_102"
+    ],
+    "de": [
+     "CO art_6",
+     "CO art_176",
+     "CO art_395",
+     "DPO art_18",
+     "CO art_9"
+    ],
+    "official": [
+     "CO art_6",
+     "CO art_697_b",
+     "DPO art_18",
+     "EmpA art_50",
+     "DPO art_17"
+    ],
+    "all": [
+     "CO art_6",
+     "CO art_981",
+     "CO art_697_b",
+     "DPO art_18",
+     "FADP art_37"
+    ]
+   }
+  },
+  {
+   "id": "q31",
+   "q": "Can I demand that a company corrects wrong information it has about me?",
+   "gold": [
+    "FADP art_32"
+   ],
+   "translation": {
+    "de": "Können Sie verlangen, dass ein Unternehmen fehlerhafte Daten über Sie korrigiert?",
+    "fr": "Pouvez-vous exiger qu'une entreprise corrige des informations erronées qu'elle détient à votre sujet?",
+    "it": "Può richiedere che un'azienda corregga informazioni errate che ha su di lei?",
+    "en": "Can I demand that a company corrects wrong information it has about me?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "GEA art_13_e",
+     "FADP art_57",
+     "CO art_697_f",
+     "DPO art_29",
+     "CO art_190"
+    ],
+    "de": [
+     "PLA art_4",
+     "PLA art_1",
+     "PLA art_7",
+     "FADP art_28",
+     "FADP art_36"
+    ],
+    "official": [
+     "EmpA art_48",
+     "CO art_936_b",
+     "GEA art_13_e",
+     "DPO art_19",
+     "CO art_961_d"
+    ],
+    "all": [
+     "GEA art_13_e",
+     "EmpA art_48",
+     "CO art_936_b",
+     "FADP art_25",
+     "DPO art_19"
+    ]
+   }
+  },
+  {
+   "id": "q32",
+   "q": "Is it legal to send marketing emails to people who never agreed to receive them?",
+   "gold": [
+    "UCA art_3"
+   ],
+   "translation": {
+    "de": "Ist es rechtlich zulässig, Werbe-E-Mails an Personen zu versenden, die keine Einwilligung erteilt haben?",
+    "fr": "Est-il légalement permis d'envoyer des e-mails de marketing à des personnes qui n'ont jamais donné leur consentement?",
+    "it": "È legalmente consentito inviare e-mail di marketing a persone che non hanno mai acconsentito?",
+    "en": "Is it legal to send marketing emails to people who never agreed to receive them?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "CO art_105",
+     "CO art_6_a",
+     "CO art_801_a",
+     "CO art_317",
+     "CO art_960_b"
+    ],
+    "de": [
+     "CO art_460",
+     "CO art_164",
+     "UCA art_17",
+     "FADP art_6",
+     "CO art_695"
+    ],
+    "official": [
+     "FADP art_34",
+     "FADP art_36",
+     "FADP art_6",
+     "CO art_500",
+     "FADP art_17"
+    ],
+    "all": [
+     "FADP art_34",
+     "FADP art_36",
+     "FADP art_6",
+     "CO art_500",
+     "FADP art_17"
+    ]
+   }
+  },
+  {
+   "id": "q33",
+   "q": "Can a company's terms and conditions be unfair and therefore not allowed?",
+   "gold": [
+    "UCA art_8"
+   ],
+   "translation": {
+    "de": "Können die Allgemeinen Geschäftsbedingungen eines Unternehmens als unlauter gelten und damit nicht zulässig sein?",
+    "fr": "Les conditions générales d'une entreprise peuvent-elles être considérées comme abusives et donc non autorisées?",
+    "it": "Le condizioni generali di un'azienda possono essere considerate sleali e quindi non consentite?",
+    "en": "Can a company's terms and conditions be unfair and therefore not allowed?"
+   },
+   "rank": {
+    "en": 1,
+    "de": 1,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "UCA art_8",
+     "UCA art_8_a",
+     "CO art_262",
+     "CO art_697_g",
+     "UCA art_7"
+    ],
+    "de": [
+     "UCA art_8",
+     "UCA art_8_a",
+     "CO art_256",
+     "CO art_656_c",
+     "CO art_960_d"
+    ],
+    "official": [
+     "UCA art_8",
+     "CO art_656_c",
+     "UCA art_8_a",
+     "EmpA art_27",
+     "UCA art_7"
+    ],
+    "all": [
+     "UCA art_8",
+     "UCA art_8_a",
+     "UCA art_7",
+     "CO art_656_c",
+     "UCA art_2"
+    ]
+   }
+  },
+  {
+   "id": "q34",
+   "q": "Do shops have to show the final price to consumers?",
+   "gold": [
+    "UCA art_16"
+   ],
+   "translation": {
+    "de": "Müssen Geschäfte den Endpreis den Verbrauchern anzeigen?",
+    "fr": "Les magasins doivent-ils afficher le prix final aux consommateurs?",
+    "it": "I negozi devono mostrare il prezzo finale ai consumatori?",
+    "en": "Do shops have to show the final price to consumers?"
+   },
+   "rank": {
+    "en": 3,
+    "de": null,
+    "official": 3,
+    "all": 3
+   },
+   "top": {
+    "en": [
+     "UCA art_16_a",
+     "UCA art_24",
+     "UCA art_16",
+     "UCA art_3",
+     "UCA art_4"
+    ],
+    "de": [
+     "CO art_902",
+     "EmpA art_54",
+     "PLA art_1",
+     "CO art_335_g",
+     "CO art_450"
+    ],
+    "official": [
+     "UCA art_24",
+     "UCA art_16_a",
+     "UCA art_16",
+     "UCA art_19",
+     "FADP art_73"
+    ],
+    "all": [
+     "UCA art_24",
+     "UCA art_16_a",
+     "UCA art_16",
+     "FADP art_73",
+     "UCA art_19"
+    ]
+   }
+  },
+  {
+   "id": "q35",
+   "q": "A faulty kitchen appliance injured me. Is the manufacturer liable?",
+   "gold": [
+    "PLA art_1"
+   ],
+   "translation": {
+    "de": "Ein fehlerhaftes Küchengerät hat mich verletzt. Ist der Hersteller haftbar?",
+    "fr": "Un appareil de cuisine défectueux m'a blessé. Le fabricant est-il responsable?",
+    "it": "Un elettrodomestico da cucina difettoso mi ha ferito. Il produttore è responsabile?",
+    "en": "A faulty kitchen appliance injured me. Is the manufacturer liable?"
+   },
+   "rank": {
+    "en": null,
+    "de": 2,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "UCA art_6",
+     "CO art_43",
+     "CO art_956",
+     "CO art_594",
+     "CO art_253_b"
+    ],
+    "de": [
+     "CO art_58",
+     "PLA art_1",
+     "CO art_51",
+     "PLA art_4",
+     "PLA art_7"
+    ],
+    "official": [
+     "PLA art_1",
+     "PLA art_7",
+     "PLA art_4",
+     "CO art_427",
+     "PLA art_5"
+    ],
+    "all": [
+     "PLA art_1",
+     "PLA art_7",
+     "PLA art_4",
+     "CO art_253_b",
+     "CO art_427"
+    ]
+   }
+  },
+  {
+   "id": "q36",
+   "q": "How long do I have to sue a manufacturer over a defective product?",
+   "gold": [
+    "PLA art_9",
+    "PLA art_10"
+   ],
+   "translation": {
+    "de": "Wie lange ist die Verjährungsfrist, um einen Hersteller wegen eines fehlerhaften Produkts zu verklagen?",
+    "fr": "Combien de temps ai-je pour intenter une action en justice contre un fabricant pour un produit défectueux ?",
+    "it": "Quanto tempo ho per intentare una causa contro un produttore per un prodotto difettoso?",
+    "en": "How long do I have to sue a manufacturer over a defective product?"
+   },
+   "rank": {
+    "en": null,
+    "de": null,
+    "official": 6,
+    "all": 8
+   },
+   "top": {
+    "en": [
+     "CO art_258",
+     "UCA art_5",
+     "CO art_288",
+     "FADP art_13",
+     "CO art_960_a"
+    ],
+    "de": [
+     "PLA art_4",
+     "PLA art_1",
+     "PLA art_7",
+     "CO art_58",
+     "FADP art_13"
+    ],
+    "official": [
+     "PLA art_4",
+     "PLA art_1",
+     "PLA art_2",
+     "PLA art_7",
+     "PLA art_5"
+    ],
+    "all": [
+     "PLA art_4",
+     "PLA art_1",
+     "PLA art_2",
+     "PLA art_7",
+     "PLA art_5"
+    ]
+   }
+  },
+  {
+   "id": "q37",
+   "q": "My landlord raised the rent. How long do I have to challenge it?",
+   "gold": [
+    "CO art_270_b"
+   ],
+   "translation": {
+    "de": "Wie lange habe ich Zeit, um die Mieterhöhung anzufechten?",
+    "fr": "Combien de temps ai-je pour contester la majoration du loyer?",
+    "it": "Quanto tempo ho per impugnare l'aumento dell'affitto?",
+    "en": "My landlord raised the rent. How long do I have to challenge it?"
+   },
+   "rank": {
+    "en": 2,
+    "de": null,
+    "official": 2,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_270_d",
+     "CO art_270_b",
+     "CO art_270_a",
+     "CO art_270_c",
+     "CO art_270"
+    ],
+    "de": [
+     "CO art_587",
+     "CO art_476",
+     "CO art_924",
+     "CO art_83",
+     "CO art_381"
+    ],
+    "official": [
+     "CO art_298",
+     "CO art_270_b",
+     "CO art_295",
+     "CO art_587",
+     "CO art_269_d"
+    ],
+    "all": [
+     "CO art_270_b",
+     "CO art_270_d",
+     "CO art_270_a",
+     "CO art_269_d",
+     "CO art_270"
+    ]
+   }
+  },
+  {
+   "id": "q38",
+   "q": "Where must the landlord keep my rental deposit?",
+   "gold": [
+    "CO art_257_e"
+   ],
+   "translation": {
+    "de": "Wo muss der Vermieter die Mietkaution aufbewahren?",
+    "fr": "Où le bailleur doit-il conserver mon dépôt de garantie?",
+    "it": "Dove deve conservare il proprietario il mio deposito cauzionale?",
+    "en": "Where must the landlord keep my rental deposit?"
+   },
+   "rank": {
+    "en": 6,
+    "de": null,
+    "official": null,
+    "all": null
+   },
+   "top": {
+    "en": [
+     "CO art_259_h",
+     "CO art_259_g",
+     "CO art_299_c",
+     "CO art_484",
+     "CO art_264"
+    ],
+    "de": [
+     "DPO art_14",
+     "CO art_478",
+     "CO art_964_h",
+     "CO art_730_c",
+     "CO art_476"
+    ],
+    "official": [
+     "CO art_478",
+     "CO art_486",
+     "CO art_481",
+     "CO art_488",
+     "CO art_973_a"
+    ],
+    "all": [
+     "CO art_481",
+     "CO art_478",
+     "CO art_488",
+     "CO art_486",
+     "CO art_259_h"
+    ]
+   }
+  },
+  {
+   "id": "q39",
+   "q": "How much notice do I need to give to move out of my flat?",
+   "gold": [
+    "CO art_266_c"
+   ],
+   "translation": {
+    "de": "Wie lange ist die Kündigungsfrist bei einem Wohnraummietvertrag?",
+    "fr": "Quel est le délai de préavis à respecter pour un contrat de location d'habitation?",
+    "it": "Qual è il termine di preavviso per un contratto di locazione di abitazione?",
+    "en": "How much notice do I need to give to move out of my flat?"
+   },
+   "rank": {
+    "en": null,
+    "de": 10,
+    "official": 1,
+    "all": 1
+   },
+   "top": {
+    "en": [
+     "CO art_155",
+     "CO art_248",
+     "CO art_934",
+     "CO art_266_a",
+     "CO art_279"
+    ],
+    "de": [
+     "CO art_844",
+     "CO art_418_q",
+     "CO art_335_a",
+     "CO art_587",
+     "CO art_335_c"
+    ],
+    "official": [
+     "CO art_266_c",
+     "CO art_296",
+     "CO art_335_c",
+     "CO art_257_d",
+     "CO art_257_f"
+    ],
+    "all": [
+     "CO art_266_c",
+     "CO art_266_a",
+     "CO art_296",
+     "CO art_335_c",
+     "CO art_269_d"
+    ]
+   }
+  },
+  {
+   "id": "q40",
+   "q": "What interest can I charge a customer who pays an invoice late?",
+   "gold": [
+    "CO art_104"
+   ],
+   "translation": {
+    "de": "Welche Verzugszinsen kann ich einem Kunden berechnen, der eine Rechnung verspätet bezahlt?",
+    "fr": "Quels intérêts de retard puis-je facturer à un client qui paie une facture en retard?",
+    "it": "Quali interessi di mora posso addebitare a un cliente che paga una fattura in ritardo?",
+    "en": "What interest can I charge a customer who pays an invoice late?"
+   },
+   "rank": {
+    "en": null,
+    "de": 3,
+    "official": 4,
+    "all": 9
+   },
+   "top": {
+    "en": [
+     "CO art_377",
+     "CO art_400",
+     "CO art_368",
+     "CO art_302",
+     "CO art_73"
+    ],
+    "de": [
+     "CO art_1124",
+     "CO art_105",
+     "CO art_104",
+     "CO art_348_a",
+     "CO art_431"
+    ],
+    "official": [
+     "CO art_105",
+     "UCA art_10",
+     "CO art_1124",
+     "CO art_104",
+     "CO art_107"
+    ],
+    "all": [
+     "UCA art_10",
+     "CO art_105",
+     "CO art_448",
+     "CO art_40_f",
+     "CO art_1124"
+    ]
+   }
+  }
+ ],
+ "summary": {
+  "en": {
+   "label": "English translation only",
+   "hit@1": 0.2,
+   "hit@5": 0.35,
+   "hit@10": 0.5,
+   "mrr": 0.2800694444444444
+  },
+  "de": {
+   "label": "German text, question translated",
+   "hit@1": 0.175,
+   "hit@5": 0.375,
+   "hit@10": 0.5,
+   "mrr": 0.26034722222222223
+  },
+  "official": {
+   "label": "German + French + Italian, fused",
+   "hit@1": 0.325,
+   "hit@5": 0.625,
+   "hit@10": 0.725,
+   "mrr": 0.4654464285714286
+  },
+  "all": {
+   "label": "All four languages, fused",
+   "hit@1": 0.35,
+   "hit@5": 0.625,
+   "hit@10": 0.75,
+   "mrr": 0.48298611111111106
+  },
+  "no_english": {
+   "questions": 7,
+   "found_en@5": 0,
+   "found_all@5": 5
+  },
+  "all_vs_en@5": {
+   "only_en": 2,
+   "only_all": 13,
+   "p": 0.00738525390625
+  }
+ },
+ "translator": "groq:openai/gpt-oss-20b"
+}

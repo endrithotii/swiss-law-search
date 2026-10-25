@@ -301,7 +301,7 @@ function renderEval(R) {
     <span class="v">${Math.round(100 * S[m]["hit@5"])}%</span></div>`).join("");
   const ne = S.no_english, c = S["all_vs_en@5"];
   $("#facts").innerHTML = `
-    <p><b>${ne.found_en}/${ne.questions} and ${ne.found_all}/${ne.questions}</b>Questions answered only by acts with no English text at all (the Labour Act, the Product Liability Act): found in the top five by English search, and by the four-language search.</p>
+    <p><b>${ne["found_all@5"]} of ${ne.questions} against ${ne["found_en@5"]}</b>Questions answered only by acts with no English text at all (the Labour Act, the Product Liability Act), found in the top five by the four-language search against English search.</p>
     <p><b>${c.only_all} against ${c.only_en}</b>Questions only the four-language search found in its top five, against questions only English search found. Exact McNemar test: p = ${c.p < 0.001 ? "< 0.001" : c.p.toFixed(3)}.</p>
     <p><b>${Math.round(100 * S.all.mrr) / 100} against ${Math.round(100 * S.en.mrr) / 100}</b>Mean reciprocal rank of the right article, four languages against English only. 1 would mean always first.</p>`;
   const cell = r => r ? `<td class="r">${r}</td>` : `<td class="r miss">not in top 10</td>`;

@@ -26,7 +26,23 @@ Building the corpus on 25 October 2026:
 | Unfair Competition Act | 241 | 2025-01-01 | same version |
 | Product Liability Act | 221.112.944 | 2010-07-01 | **none** |
 
-The retrieval evaluation is in `evals/`; its results are added here when the run completes.
+Seven of the 40 evaluation questions are answered only by the Labour Act or the Product Liability Act. An English-only search cannot find them at any rank.
+
+## Evaluation
+
+40 questions in plain English, the way people type them (`evals/questions.json`), each with the article or articles that answer it, checked against the text. Every question is searched four ways; the translations into German, French and Italian are made once by `gpt-oss-20b` and kept in `evals/translations.json`, so the numbers can be reproduced without a model.
+
+| Search | Right article first | In the top 5 | In the top 10 | Mean reciprocal rank |
+|---|---|---|---|---|
+| English translation only | 20% | 35% | 50% | 0.28 |
+| German text, question translated | 18% | 38% | 50% | 0.26 |
+| German + French + Italian, fused | 33% | 63% | 73% | 0.47 |
+| All four languages, fused | 35% | 63% | 75% | 0.48 |
+
+- Four-language fusion against English only, top 5: 13 questions found only by fusion, 2 only by English. Exact McNemar test, p = 0.007.
+- The 7 questions whose answer has no English text: English search found none of them in its top 5, fusion found 5.
+- **Searching German alone does not help** (38% against 35%). The gain comes from combining languages: each translation misses different words, and an article that ranks well in several languages rises.
+- **10 of 40 questions are still not in the top 10.** These are vocabulary gaps that word matching cannot bridge: "cyber attack, customer data leaked" against "breach of data security", "marketing emails" against "mass advertising by telecommunication", "travel costs" against "expenses". That is the clearest next step: add embedding search to the fusion and measure it on the same 40 questions.
 
 ## Use it
 

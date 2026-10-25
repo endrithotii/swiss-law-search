@@ -215,5 +215,68 @@
   "fr": "Pouvez-vous exiger qu'une entreprise corrige des informations erronées qu'elle détient à votre sujet?",
   "it": "Può richiedere che un'azienda corregga informazioni errate che ha su di lei?",
   "en": "Can I demand that a company corrects wrong information it has about me?"
+ },
+ "groq/openai/gpt-oss-20b:9defdc6c79a53137": {
+  "q": "Is it legal to send marketing emails to people who never agreed to receive them?",
+  "de": "Ist es rechtlich zulässig, Werbe-E-Mails an Personen zu versenden, die keine Einwilligung erteilt haben?",
+  "fr": "Est-il légalement permis d'envoyer des e-mails de marketing à des personnes qui n'ont jamais donné leur consentement?",
+  "it": "È legalmente consentito inviare e-mail di marketing a persone che non hanno mai acconsentito?",
+  "en": "Is it legal to send marketing emails to people who never agreed to receive them?"
+ },
+ "groq/openai/gpt-oss-20b:8f24ac0db4873b16": {
+  "q": "Can a company's terms and conditions be unfair and therefore not allowed?",
+  "de": "Können die Allgemeinen Geschäftsbedingungen eines Unternehmens als unlauter gelten und damit nicht zulässig sein?",
+  "fr": "Les conditions générales d'une entreprise peuvent-elles être considérées comme abusives et donc non autorisées?",
+  "it": "Le condizioni generali di un'azienda possono essere considerate sleali e quindi non consentite?",
+  "en": "Can a company's terms and conditions be unfair and therefore not allowed?"
+ },
+ "groq/openai/gpt-oss-20b:7f31d11def33dbb3": {
+  "q": "Do shops have to show the final price to consumers?",
+  "de": "Müssen Geschäfte den Endpreis den Verbrauchern anzeigen?",
+  "fr": "Les magasins doivent-ils afficher le prix final aux consommateurs?",
+  "it": "I negozi devono mostrare il prezzo finale ai consumatori?",
+  "en": "Do shops have to show the final price to consumers?"
+ },
+ "groq/openai/gpt-oss-20b:3fafc8a9c17f4844": {
+  "q": "A faulty kitchen appliance injured me. Is the manufacturer liable?",
+  "de": "Ein fehlerhaftes Küchengerät hat mich verletzt. Ist der Hersteller haftbar?",
+  "fr": "Un appareil de cuisine défectueux m'a blessé. Le fabricant est-il responsable?",
+  "it": "Un elettrodomestico da cucina difettoso mi ha ferito. Il produttore è responsabile?",
+  "en": "A faulty kitchen appliance injured me. Is the manufacturer liable?"
+ },
+ "groq/openai/gpt-oss-20b:bd39e44cc6077d2a": {
+  "q": "How long do I have to sue a manufacturer over a defective product?",
+  "de": "Wie lange ist die Verjährungsfrist, um einen Hersteller wegen eines fehlerhaften Produkts zu verklagen?",
+  "fr": "Combien de temps ai-je pour intenter une action en justice contre un fabricant pour un produit défectueux ?",
+  "it": "Quanto tempo ho per intentare una causa contro un produttore per un prodotto difettoso?",
+  "en": "How long do I have to sue a manufacturer over a defective product?"
+ },
+ "groq/openai/gpt-oss-20b:ac6b3734856f61c0": {
+  "q": "My landlord raised the rent. How long do I have to challenge it?",
+  "de": "Wie lange habe ich Zeit, um die Mieterhöhung anzufechten?",
+  "fr": "Combien de temps ai-je pour contester la majoration du loyer?",
+  "it": "Quanto tempo ho per impugnare l'aumento dell'affitto?",
+  "en": "My landlord raised the rent. How long do I have to challenge it?"
+ },
+ "groq/openai/gpt-oss-20b:8ff0d1cd32ca0a6e": {
+  "q": "Where must the landlord keep my rental deposit?",
+  "de": "Wo muss der Vermieter die Mietkaution aufbewahren?",
+  "fr": "Où le bailleur doit-il conserver mon dépôt de garantie?",
+  "it": "Dove deve conservare il proprietario il mio deposito cauzionale?",
+  "en": "Where must the landlord keep my rental deposit?"
+ },
+ "groq/openai/gpt-oss-20b:01a9c9c677662c97": {
+  "q": "How much notice do I need to give to move out of my flat?",
+  "de": "Wie lange ist die Kündigungsfrist bei einem Wohnraummietvertrag?",
+  "fr": "Quel est le délai de préavis à respecter pour un contrat de location d'habitation?",
+  "it": "Qual è il termine di preavviso per un contratto di locazione di abitazione?",
+  "en": "How much notice do I need to give to move out of my flat?"
+ },
+ "groq/openai/gpt-oss-20b:8da9ef8ddc0418c0": {
+  "q": "What interest can I charge a customer who pays an invoice late?",
+  "de": "Welche Verzugszinsen kann ich einem Kunden berechnen, der eine Rechnung verspätet bezahlt?",
+  "fr": "Quels intérêts de retard puis-je facturer à un client qui paie une facture en retard?",
+  "it": "Quali interessi di mora posso addebitare a un cliente che paga una fattura in ritardo?",
+  "en": "What interest can I charge a customer who pays an invoice late?"
  }
 }
