@@ -89,5 +89,19 @@
   "fr": "Combien d'heures par semaine un employé de bureau peut-il être contraint de travailler au maximum?",
   "it": "Quante ore settimanali un dipendente di ufficio può essere obbligato a lavorare al massimo?",
   "en": "What is the maximum number of hours per week an office employee can be made to work?"
+ },
+ "groq/openai/gpt-oss-20b:c515e86ab90deae4": {
+  "q": "How long a break am I entitled to during a long working day?",
+  "de": "Wie lange Pause habe ich während eines langen Arbeitstages Anspruch?",
+  "fr": "Quelle est la durée de la pause à laquelle je suis droit pendant une journée de travail longue?",
+  "it": "Qual è la durata della pausa a cui ho diritto durante una lunga giornata di lavoro?",
+  "en": "How long a break am I entitled to during a long working day?"
+ },
+ "groq/openai/gpt-oss-20b:8d402a7e906bb1d8": {
+  "q": "Is my employer allowed to make me work on Sundays?",
+  "de": "Darf mein Arbeitgeber mich am Sonntag arbeiten lassen?",
+  "fr": "Mon employeur peut-il me faire travailler le dimanche?",
+  "it": "Il mio datore di lavoro può farmi lavorare la domenica?",
+  "en": "Is my employer allowed to make me work on Sundays?"
  }
 }
