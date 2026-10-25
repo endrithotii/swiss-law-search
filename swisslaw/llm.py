@@ -132,7 +132,13 @@ class CompatibleModel:
         for attempt in range(3):
             try:
                 out = _post(self.url, headers, body, timeout=300)
-                return parse_json(out["choices"][0]["message"]["content"])
+                choice = out["choices"][0]
+                if not (choice["message"].get("content") or "").strip() and choice.get("finish_reason") == "length":
+                    # A reasoning model spent the whole budget thinking and wrote nothing.
+                    # Ask again with less reasoning instead of repeating the same request.
+                    body["reasoning_effort"] = "low"
+                    continue
+                return parse_json(choice["message"]["content"])
             except QuotaExhausted:
                 raise
             except (RuntimeError, ValueError) as e:
